@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Getting Started
 
 First, install the dependencies:
@@ -26,3 +27,7 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+=======
+# PCOS-FertiliCare
+PCOS-FertiliCare Project Repository 
+>>>>>>> 53c8595 (Initial commit)
