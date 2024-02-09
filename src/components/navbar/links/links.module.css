@@ -1,0 +1,43 @@
+/* styles/links.module.css */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #C1ECE4; /* Add your desired background color */
+  padding: 10px 20px; /* Add padding for better visual appeal */
+  height: 60px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #e74c3c; /* Add your desired logout button background color */
+  color: #fff; /* Add your desired text color */
+  border: none;
+}
+
+.menuButton {
+  cursor: pointer;
+}
+
+.mobileLinks {
+  position: absolute;
+  top: 60px; /* Adjust the top position as needed */
+  right: 0;
+  width: 50%;
+  height: calc(100vh - 60px); /* Adjust the height calculation as needed */
+  background-color: #3498db; /* Add your desired background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+

@@ -1,0 +1,17 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question h3 {
+  color: #333;
+}
+
+.question p {
+  color: #666;
+}

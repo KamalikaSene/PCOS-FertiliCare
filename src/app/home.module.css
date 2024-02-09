@@ -1,0 +1,165 @@
+
+
+.container {
+  display: flex;
+  gap: 0px;
+}
+.button {
+  display: inline-block;
+  width: 400px; /* Set a fixed width for the button */
+  height: 75px; /* Set a fixed height for the button */
+  font-size: 20px; /* Adjust font size as needed */
+  text-align: center;
+  text-decoration: none;
+  background-color: #FFD0D0; /* Change the background color to your preference */
+  color: #120101; /* Change the text color to your preference */
+  border: 2px  #FFD0D0; /* Change the border color to your preference */
+  border-radius: 50px; /* Adjust border-radius to make the corners edged */
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button:hover{
+  display: inline-block;
+  width: 400px; /* Set a fixed width for the button */
+  height: 75px; /* Set a fixed height for the button */
+  font-size: 20px; /* Adjust font size as needed */
+  text-align: center;
+  text-decoration: none;
+  background-color: #FF9EAA; /* Change the background color to your preference */
+  color: #120101; /* Change the text color to your preference */
+  border: 2px groove #FF9EAA; /* Change the border color to your preference */
+  border-radius: 50px; /* Adjust border-radius to make the corners edged */
+  cursor: pointer;
+  margin-top: 20px;
+
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.title{
+  font-size: 96px;
+}
+
+.desc{
+  font-size: 20px;
+}
+.brands{
+  width: 500px;
+  height: 50px;
+  position: relative;
+  filter: grayscale(1);
+}
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buttons{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 64px;
+  }
+
+  .brands{
+    width: 100%;
+  }
+}
+/* styles/Home.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.leftTopContainer {
+  display: flex;
+  align-items: center;
+  background-color: lightblue;  
+}
+
+.leftTopContainer:hover{
+  display: flex;
+  align-items: center;
+  background-color: #59B4C3;  
+  cursor:pointer;
+  transition: transform 0.3s ease-in-out;
+  scale:1.02;
+}
+
+.rightTopContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightpink;
+}
+
+.rightBottomContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightblue;
+  
+}
+
+.leftBottomContainer {
+  display: flex;
+  align-items: center;
+  background-color: lightgreen;
+}
+
+.rightTopContainer img,
+.rightBottomContainer img {
+  margin-left: 20px; /* Add margin to position the image to the right of the content */
+}
+.rightTopContainer img{
+  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.leftBottomContainer img{
+  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.rightBottomContainer img{
+  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.leftTopContainer img{
+  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
+  height: auto; /* Maintain the aspect ratio */
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+.container{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #C1ECE4 ;
+}
+
+.logo img {
+  max-width: 100px; 
+  max-height: 100px; 
+  height: auto;
+  margin-left: 10px;
+ 
+}
