@@ -86,37 +86,49 @@
 .leftTopContainer {
   display: flex;
   align-items: center;
-  background-color: lightblue;  
+  background-color: lightblue;
 }
 
 .leftTopContainer:hover{
   display: flex;
-  align-items: center;
-  background-color: #59B4C3;  
+  align-items: center;  
   cursor:pointer;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   scale:1.02;
+ 
 }
 
 .rightTopContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: lightpink;
+  background-color: lightgreen;
+
+}
+.rightTopContainer:hover{
+  display: flex;
+  align-items: center;
+  background-color:lightgreen;  
+  cursor:pointer;
+  transition: transform 0.4s ease-in-out;
+  scale:1.02;
+ 
 }
 
 .rightBottomContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: lightblue;
+  background-color: #FF9EAA;
   
 }
 
 .leftBottomContainer {
   display: flex;
   align-items: center;
-  background-color: lightgreen;
+  background-color: #64CCC5;
+
+  
 }
 
 .rightTopContainer img,
@@ -125,36 +137,47 @@
 }
 .rightTopContainer img{
   max-width: 50%; /* Set the maximum width of the image to 50% of the container */
-  height: auto; /* Maintain the aspect ratio */
+  height: 300px; /* Maintain the aspect ratio */
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
   margin-right: 40px;
+  border-radius:30px;
 }
 .leftBottomContainer img{
-  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
-  height: auto; /* Maintain the aspect ratio */
+  max-width: 350px; /* Set the maximum width of the image to 50% of the container */
+  height:300px; /* Maintain the aspect ratio */
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
   margin-right: 40px;
+  border-radius:30px;
 }
 .rightBottomContainer img{
   max-width: 50%; /* Set the maximum width of the image to 50% of the container */
-  height: auto; /* Maintain the aspect ratio */
+  height: 300px; /* Maintain the aspect ratio */
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
   margin-right: 40px;
+  border-radius:30px;
 }
 .leftTopContainer img{
-  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
-  height: auto; /* Maintain the aspect ratio */
+  max-width: 350px; /* Set the maximum width of the image to 50% of the container */
+  height: 300px; /* Maintain the aspect ratio */
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
   margin-right: 40px;
+  border-radius:30px;
 }
+.rightTopContainer > div {
+  margin-left: 180px; /* Adjust the left margin to move the content and heading to the right */
+}
+.rightBottomContainer > div {
+  margin-left: 180px; /* Adjust the left margin to move the content and heading to the right */
+}
+
 
 
 

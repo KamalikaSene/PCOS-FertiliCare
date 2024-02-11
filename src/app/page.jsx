@@ -1,49 +1,36 @@
 import styles from './home.module.css';
+import Link from 'next/link'; // Import Link from next/link
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <div className={styles.leftTopContainer} >
-        <img src="/pcos2.jpg" alt="Image 1"  />
+      <Link href="/About-PCOS" className={styles.leftTopContainer}  >
+        <img src="/nursepic.jpg" alt="Image 1"  />
         <div>
           {/* Content for the left container */}
           <h2>What is PCOS Fertilicare</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
         </div>
-      </div>
+      </Link>
 
       <div className={styles.rightTopContainer}>
         <div>
           {/* Content for the right container */}
           <h2>About PCOS</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-
-          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+        </p>
         </div>
-        <img src="/pcos2.jpg" alt="Image 2" />
+        <img src="/aboutpcos.png" alt="Image 2" />
       </div>
     
       <div className={styles.leftBottomContainer}>
-        <img src="/pcos2.jpg" alt="Image 1" />
+        <img src="/predictpic.jpg" alt="Image 1" />
         <div>
           {/* Content for the left container */}
           <h2>Predict Infertility Risk Level</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
+         
           </p>
         </div>
       </div>
@@ -53,14 +40,9 @@ export default function Home() {
           {/* Content for the right container */}
           <h2>View Past Results</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
         </div>
-        <img src="/pcos2.jpg" alt="Image 2" />
+        <img src="/infertile2.jpg" alt="Image 2" />
       </div>
       </div>
   );
