@@ -5,7 +5,8 @@ const About= () => {
   return (
    <div>hi there
     jfkfjfkfkfjfjffjjfj
-    jedjjdjdjddj
+    jedjjdjdjddjgifhddhdhdhdhdhdhhdhdddd
+    djdjdjdjdjdj
    </div>
 
     
