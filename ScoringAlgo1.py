@@ -1,9 +1,9 @@
 def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     # Define thresholds for each variable
     bmi_thresholds = {'low': 18.5, 'medium': 24.9}#add proper threashholds
-    menstrual_cycle_categories = {'regular', 'irregular'}
-    fsh_lh_ratio_categories = {'low', 'medium', 'high'}#add proper threashholds
-    prolactin_categories = {'normal', 'elevated'}#add proper threashholds
+    menstrual_cycle_categories = {'regular':2, 'irregular':4}
+    fsh_lh_ratio_categories = {'low':1, 'medium':0.5, 'high':0.333}#add proper threashholds
+    prolactin_categories = {'normal':25, 'elevated':100}#add proper threashholds
 
     # Assign weights to variables
     weights = {'bmi': 0.2, 'menstrual_cycle': 0.2, 'fsh_lh_ratio': 0.3, 'prolactin': 0.3}#add the real weights
