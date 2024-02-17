@@ -10,6 +10,8 @@ import os
 import openpyxl
 import sklearn
 
+# testing part 2
+
 df = pd.read_excel("PCOS_data_without_infertility.xlsx",sheet_name=1)
 
 df["Infertility (Y/N)"] = np.where(df['PCOS (Y/N)'] == 1, "Y", "N")
