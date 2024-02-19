@@ -21,6 +21,7 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     # Map BMI to risk category
     bmi_category = map_to_category(bmi, bmi_thresholds)
     # Handle irregular menstrual cycle
+    
     #the following code has to be changed to handle a threshhold as above . 
     menstrual_cycle_category = 'irregular' if menstrual_cycle not in menstrual_cycle_categories else menstrual_cycle
     # Map FSH/LH ratio to risk category, also all fake values have to enter proper ones 
@@ -59,9 +60,13 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
         weights['prolactin'] * (1 if prolactin_category == 'elevated' else 0)
     )
 
+    # low, mid, high risk should be numerical values when populated into the dataset.  eg: 2,4,6
+    # Low_risk = 2
+
     # Interpret cumulative risk score
     if 0 <= cumulative_risk_score <= 0.3:
         return 'Low risk'
+        # return Low_risk
     elif 0.31 <= cumulative_risk_score <= 0.6:
         return 'Medium risk'
     else:
@@ -74,4 +79,4 @@ fsh_lh_ratio = 2.5
 prolactin = 25
 
 risk = assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin)
-print("Risk of infertility:", risk)
+print("Risk of infertility:",risk)
