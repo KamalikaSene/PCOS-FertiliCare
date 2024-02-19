@@ -4,7 +4,7 @@ import Link from 'next/link'; // Import Link from next/link
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Link href="/About-PCOS" className={styles.leftTopContainer}  >
+      <Link href="/What-is-PCOS-Fertilicare" className={styles.leftTopContainer}  >
         <img src="/nursepic.jpg" alt="Image 1"  />
         <div>
           {/* Content for the left container */}
@@ -14,15 +14,16 @@ export default function Home() {
         </div>
       </Link>
 
-      <div className={styles.rightTopContainer}>
+      <Link href="/About-PCOS" className={styles.rightTopContainer}>
         <div>
           {/* Content for the right container */}
           <h2>About PCOS</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
-        </p>
+          </p>
         </div>
         <img src="/aboutpcos.png" alt="Image 2" />
-      </div>
+       </Link>
+      
     
       <div className={styles.leftBottomContainer}>
         <img src="/predictpic.jpg" alt="Image 1" />
