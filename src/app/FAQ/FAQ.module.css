@@ -2,16 +2,24 @@
   max-width: 800px;
   margin: auto;
   padding: 20px;
+  background-color: #F2FFE9; /* Light gray background */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
 }
 
 .question {
   margin-bottom: 20px;
+  margin-top:20px;
+
 }
 
 .question h3 {
   color: #333;
+  margin-bottom: 10px; /* Add some space below the question */
+
 }
 
 .question p {
   color: #666;
+  line-height: 1.5; /* Improve readability with slightly increased line height */
 }
