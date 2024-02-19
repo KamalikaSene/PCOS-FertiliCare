@@ -18,6 +18,26 @@ const About= () => {
         <li>Pill-induced PCOS - Resulting from progestin in birth control pills, disrupting hormone balance.</li>
       </ol>  
 
+      <h2>PCOS Affects</h2>
+      <ul>
+        <li>1 in 12 individuals</li>
+        <li>4-8% individuals of childbearing age globally</li>
+        <li>31.3% Asian individuals</li>
+      </ul>
+
+      <p>
+         Despite impacting reproductive, metabolic, and psychological well-being, PCOS is often underdiagnosed due to its diverse symptoms. These vary among women, shaped by individual differences in the environment, behavior, lifestyle, and genetics.
+      </p>
+
+      <ul>
+        <li>Irregular periods</li>
+        <li>Excess body hair and hirsutism</li>
+        <li>Hair thinning</li>
+        <li>Acne</li>
+        <li>Infertility</li>
+        <li>Weight gain</li>
+      </ul>
+
       
 
    </div>
