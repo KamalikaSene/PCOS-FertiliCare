@@ -2,12 +2,15 @@
   display: flex;
   align-items: center;
   gap: 100px;
+  margin-left:20px;
+  margin-bottom:5px;
 }
 
 .imgContainer {
   flex: 1;
   height: 500px;
   position: relative;
+  margin-right:20px;
 }
 
 .img {
@@ -30,13 +33,13 @@
   border-radius: 5px;
   border: none;
   outline: none;
-  background-color: var(--bgSoft);
+  background-color: pink;
   color: var(--text);
 }
 
 .form button {
   padding: 20px;
-  background-color: var(--btn);
+  background-color: #72DABA;
   color: var(--text);
   font-weight: bold;
   border: none;
@@ -48,4 +51,10 @@
   .container {
     flex-direction: column;
   }
+}
+.para{
+  margin-bottom:20px;
+  margin-top:20px;
+  margin-left:4px;
+  align-items:center;
 }
