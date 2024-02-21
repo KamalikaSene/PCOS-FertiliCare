@@ -9,8 +9,11 @@ export default function Home() {
         <div>
           {/* Content for the left container */}
           <h2>What is PCOS Fertilicare</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
+          <ul>
+            <li>Brief Idea about the app</li>
+            <li>Instrictions for Doctors</li>
+            <li>Instrictions for General public</li>
+          </ul>
         </div>
       </Link>
 
@@ -18,33 +21,34 @@ export default function Home() {
         <div>
           {/* Content for the right container */}
           <h2>About PCOS</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+          <p>What is Polycycstic Overy Syndrome?  
           </p>
         </div>
         <img src="/aboutpcos.png" alt="Image 2" />
        </Link>
       
     
-      <div className={styles.leftBottomContainer}>
+      <Link href="/Predict-Infertility-Risk-Level" className={styles.leftBottomContainer}>
         <img src="/predictpic.jpg" alt="Image 1" />
         <div>
           {/* Content for the left container */}
           <h2>Predict Infertility Risk Level</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <p>For Authorized medical personell only
          
           </p>
         </div>
-      </div>
+      </Link>
 
-      <div className={styles.rightBottomContainer}>
+      <Link href="/View-Past-Results" className={styles.rightBottomContainer}>
         <div>
           {/* Content for the right container */}
           <h2>View Past Results</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </p>
         </div>
+        <div>
         <img src="/infertile2.jpg" alt="Image 2" />
-      </div>
-      </div>
-  );
+        </div>
+      </Link>
+      
+    </div>
+  )
 }

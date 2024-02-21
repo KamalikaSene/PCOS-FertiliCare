@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from './instructions.module.css';
 
 const InstructionsPage = () => {
     return (
-        <div className={styles.container}>
-            <h1 className={StylePropertyMap.heading}>PCOS Fertilicare App Instructions</h1>
+        <div>
+            <h1>PCOS Fertilicare App Instructions</h1>
 
             <p>Welcome to PCOS Fertilicare! This web application is designed to aid doctors in predicting the risk of pregnancy complications in patients with PCOS. It also provides patients with a secure platform to access their individual risk assessment results.</p>
 
