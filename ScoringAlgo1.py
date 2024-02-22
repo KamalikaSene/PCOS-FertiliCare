@@ -99,16 +99,16 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     # Interpret cumulative risk score
     if 0 <= cumulative_risk_score <= 0.3:
         return 'Low risk'
-    elif 0.31 <= cumulative_risk_score <= 0.6:
+    elif 0.31 <= cumulative_risk_score <= 1.3:
         return 'Medium risk'
     else:
         return 'High risk'
 
 # Example usage
-bmi = 38
+bmi = 20
 menstrual_cycle = 2
-fsh_lh_ratio = 0.4
-prolactin = 24
+fsh_lh_ratio = 0.8
+prolactin = 25
 
 risk = assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin)
 print("Risk of infertility:", risk)
