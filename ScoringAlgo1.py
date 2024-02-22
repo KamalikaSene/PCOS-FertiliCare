@@ -1,3 +1,4 @@
+#case B 
 def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     # Define thresholds for each variable, this is a dicltionary of thresholds 
     bmi_thresholds = {'low': 23 , 'medium': 25 , "high":25 }
@@ -59,16 +60,16 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
 
     # Map BMI to risk category
     bmi_category = map_to_category(bmi, bmi_thresholds)
-    print(bmi_category)
+    print("BMI: ",bmi_category)
     # Map cycle to risk category
     menstrual_cycle_category  = map_to_category_cycle(menstrual_cycle , menstrual_cycle_thresholds)
-    print(menstrual_cycle_category)
+    print("CYCLE: ",menstrual_cycle_category)
     # Map fsh/lh to risk category
     fsh_lh_ratio_category  = map_to_category_fsh_lh_ratio(fsh_lh_ratio, fsh_lh_ratio_thresholds)
-    print(fsh_lh_ratio_category)
+    print("FSH/LH: ",fsh_lh_ratio_category)
     # Map prolactin to risk category
     prolactin_category = map_to_category(prolactin ,prolactin_thresholds)
-    print(prolactin_category)
+    print("PROLACTIN: ",prolactin_category)
 
 
     """
@@ -88,9 +89,9 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     """
     cumulative_risk_score = (
         weights['bmi'] * (0.1 if bmi_category == 'low' else (0.5 if bmi_category == 'medium' else 1)) +
-        weights['menstrual_cycle'] * (0.1 if menstrual_cycle_category == 'low' else (0.5 if bmi_category == 'medium' else 1)) +
-        weights['fsh_lh_ratio'] * (0.1 if fsh_lh_ratio_category == 'low' else (0.5 if bmi_category == 'medium' else 1)) +
-        weights['prolactin'] * (0.1 if prolactin_category == 'low' else (0.5 if bmi_category == 'medium' else 1))
+        weights['menstrual_cycle'] * (0.1 if menstrual_cycle_category == 'low' else (0.5 if menstrual_cycle_category == 'medium' else 1)) +
+        weights['fsh_lh_ratio'] * (0.1 if fsh_lh_ratio_category == 'low' else (0.5 if fsh_lh_ratio_category == 'medium' else 1)) +
+        weights['prolactin'] * (0.1 if prolactin_category == 'low' else (0.5 if prolactin_category == 'medium' else 1))
     )
 
     print("Cumulative risk score:",cumulative_risk_score)
@@ -104,10 +105,11 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
         return 'High risk'
 
 # Example usage
-bmi = 38 
+bmi = 38
 menstrual_cycle = 2
 fsh_lh_ratio = 0.4
 prolactin = 24
 
 risk = assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin)
 print("Risk of infertility:", risk)
+print()
