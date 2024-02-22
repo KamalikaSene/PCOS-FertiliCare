@@ -6,30 +6,30 @@
 }
 .button {
   display: inline-block;
-  width: 400px; /* Set a fixed width for the button */
-  height: 75px; /* Set a fixed height for the button */
-  font-size: 20px; /* Adjust font size as needed */
+  width: 400px;
+  height: 75px; 
+  font-size: 20px;
   text-align: center;
   text-decoration: none;
-  background-color: #FFD0D0; /* Change the background color to your preference */
-  color: #120101; /* Change the text color to your preference */
-  border: 2px  #FFD0D0; /* Change the border color to your preference */
-  border-radius: 50px; /* Adjust border-radius to make the corners edged */
+  background-color: #FFD0D0;
+  color: #120101;
+  border: 2px  #FFD0D0;
+  border-radius: 50px;
   cursor: pointer;
   margin-top: 20px;
 }
 
 .button:hover{
   display: inline-block;
-  width: 400px; /* Set a fixed width for the button */
-  height: 75px; /* Set a fixed height for the button */
-  font-size: 20px; /* Adjust font size as needed */
+  width: 400px;
+  height: 75px;
+  font-size: 20px;
   text-align: center;
   text-decoration: none;
-  background-color: #FF9EAA; /* Change the background color to your preference */
-  color: #120101; /* Change the text color to your preference */
-  border: 2px groove #FF9EAA; /* Change the border color to your preference */
-  border-radius: 50px; /* Adjust border-radius to make the corners edged */
+  background-color: #FF9EAA; 
+  color: #120101;
+  border: 2px groove #FF9EAA; 
+  border-radius: 50px;
   cursor: pointer;
   margin-top: 20px;
 
@@ -133,11 +133,11 @@
 
 .rightTopContainer img,
 .rightBottomContainer img {
-  margin-left: 20px; /* Add margin to position the image to the right of the content */
+  margin-left: 20px; 
 }
 .rightTopContainer img{
-  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
-  height: 300px; /* Maintain the aspect ratio */
+  max-width: 50%; 
+  height: 300px; 
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
@@ -145,8 +145,8 @@
   border-radius:30px;
 }
 .leftBottomContainer img{
-  max-width: 350px; /* Set the maximum width of the image to 50% of the container */
-  height:300px; /* Maintain the aspect ratio */
+  max-width: 350px;
+  height:300px; 
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
@@ -154,8 +154,8 @@
   border-radius:30px;
 }
 .rightBottomContainer img{
-  max-width: 50%; /* Set the maximum width of the image to 50% of the container */
-  height: 300px; /* Maintain the aspect ratio */
+  max-width: 50%; 
+  height: 300px; 
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
@@ -163,8 +163,8 @@
   border-radius:30px;
 }
 .leftTopContainer img{
-  max-width: 350px; /* Set the maximum width of the image to 50% of the container */
-  height: 300px; /* Maintain the aspect ratio */
+  max-width: 350px;
+  height: 300px;
   margin-top: 40px;
   margin-bottom: 40px;
   margin-left: 40px;
@@ -172,10 +172,10 @@
   border-radius:30px;
 }
 .rightTopContainer > div {
-  margin-left: 180px; /* Adjust the left margin to move the content and heading to the right */
+  margin-left: 180px; 
 }
 .rightBottomContainer > div {
-  margin-left: 180px; /* Adjust the left margin to move the content and heading to the right */
+  margin-left: 180px;
 }
 
 
