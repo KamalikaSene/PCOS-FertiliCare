@@ -30,28 +30,7 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     prolactin_category = 'normal' if prolactin < 20 else 'elevated'
 
     # Calculate cumulative risk score
-    #the math here is correct , but it needs to be modified to refelect the chnages to be made before . 
-    
-    """ the logic in here, this is not what we are using . 
-    low bmi = 1 
-    medium mbi = 0.5 
-    high bmi = 0 
-
-    mestrual cycle 
-    regular = 1
-    irregular = 0 
-
-    fsh /lh 
-    high = 1
-    medium = 0.5
-    low = 0 
-
-    prolactin 
-    elevated = 1
-    normal = 0 
-
-    u can see in here the more normal the patient is higher the score , so we cant use these values . but thw formulae is correct. 
-    """
+    #the math here is correct , but it needs to be modified to refelect the chnages to be made before .
 
     cumulative_risk_score = (
         weights['bmi'] * (1 if bmi_category == 'low' else (0.5 if bmi_category == 'medium' else 0)) +
