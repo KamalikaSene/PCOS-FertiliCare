@@ -16,3 +16,8 @@ print(X.columns)
 print(Y)
 X.shape
 Y.shape
+
+
+# Random Forest Classifier
+clf = RandomForestClassifier()
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
