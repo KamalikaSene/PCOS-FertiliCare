@@ -32,3 +32,4 @@ clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 print(y_pred)
 
+print(y_test)
