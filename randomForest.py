@@ -21,3 +21,8 @@ Y.shape
 # Random Forest Classifier
 clf = RandomForestClassifier()
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+X_train.shape, y_train.shape
+X_test.shape, y_test.shape
+
+X_train.dtypes,y_train.dtypes
