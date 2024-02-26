@@ -1,8 +1,9 @@
 import pandas as pd
-from sklearn import datasets
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import make_classification
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 
 # loaded the data set
 df = pd.read_excel("PCOS_data_without_infertility.xlsx",sheet_name=1)
@@ -23,3 +24,5 @@ X_train.shape
 X_test.shape
 y_train.shape
 y_test.shape
+
+dtc = DecisionTreeClassifier()
