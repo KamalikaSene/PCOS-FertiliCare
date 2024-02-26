@@ -13,9 +13,9 @@ X=df.drop(["PCOS (Y/N)","Sl. No","Patient File No."],axis = 1)
 y=df["PCOS (Y/N)"] # adding PCOS (Y/N as the target column
 
 print(X.columns)   
-print(Y)
+print(y)
 X.shape
-Y.shape
+y.shape
 
 
 # Random Forest Classifier
@@ -31,3 +31,4 @@ clf.fit(X_train, y_train)
 
 y_pred = clf.predict(X_test)
 print(y_pred)
+
