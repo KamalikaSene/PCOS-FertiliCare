@@ -7,3 +7,8 @@ from sklearn.datasets import make_classification
 # loaded the data set
 df = pd.read_excel("PCOS_data_without_infertility.xlsx",sheet_name=1)
 df.head()
+
+# remove the unnecessary columns and the target coloumn
+X=df.drop(["PCOS (Y/N)","Sl. No","Patient File No."],axis = 1) 
+y=df["PCOS (Y/N)"] # adding PCOS (Y/N as the target column
+print(X.columns)   
