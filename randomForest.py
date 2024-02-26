@@ -26,3 +26,5 @@ X_train.shape, y_train.shape
 X_test.shape, y_test.shape
 
 X_train.dtypes,y_train.dtypes
+
+clf.fit(X_train, y_train)
