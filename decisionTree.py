@@ -26,3 +26,4 @@ y_train.shape
 y_test.shape
 
 dtc = DecisionTreeClassifier()
+dtc.get_params()
