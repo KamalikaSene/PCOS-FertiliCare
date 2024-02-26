@@ -33,3 +33,4 @@ y_pred = clf.predict(X_test)
 print(y_pred)
 
 print(y_test)
+print(clf.score(X_test, y_test))
