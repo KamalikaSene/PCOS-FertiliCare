@@ -28,3 +28,6 @@ X_test.shape, y_test.shape
 X_train.dtypes,y_train.dtypes
 
 clf.fit(X_train, y_train)
+
+y_pred = clf.predict(X_test)
+print(y_pred)
