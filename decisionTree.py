@@ -27,3 +27,6 @@ y_test.shape
 
 dtc = DecisionTreeClassifier()
 dtc.get_params()
+
+dtc.fit(X_train, y_train)
+y_pred = dtc.predict(X_test)
