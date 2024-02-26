@@ -30,3 +30,6 @@ dtc.get_params()
 
 dtc.fit(X_train, y_train)
 y_pred = dtc.predict(X_test)
+
+print(confusion_matrix(y_test, y_pred))
+print(classification_report(y_test, y_pred))
