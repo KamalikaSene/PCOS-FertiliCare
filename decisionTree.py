@@ -39,3 +39,5 @@ print(classification_report(y_test, y_pred))
 dtc.feature_importances_
 
 dtc2 = DecisionTreeClassifier(criterion='entropy',ccp_alpha=0.04)
+dtc2.fit(X_train, y_train)
+y_pred2 = dtc2.predict(X_test)
