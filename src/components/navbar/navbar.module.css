@@ -3,7 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #C1ECE4 ;
+  max-width:auto;
+  background-color:#C1ECE4;
 }
 
 .logo img {
@@ -11,5 +12,4 @@
   max-height: 100px; 
   height: auto;
   margin-left: 10px;
- 
 }
