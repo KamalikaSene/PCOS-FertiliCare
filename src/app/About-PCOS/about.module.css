@@ -1,38 +1,46 @@
-.container {
+
+  /* Global styles */
+  .body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5; /* Your desired background color */
+  }
+  
+  /* Container styles */
+  .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-}
-
-.heading {
-    text-align: center;
-    color: #333;
-}
-
-h2 {
-    margin-top: 20px;
-    color: #333;
-}
-
-ul, ol {
+  }
+  
+  /* Header styles */
+  .h1 {
+    color: #0070f3; /* Your desired color */
+    font-size: 2rem;
     margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: disc;
-}
-
-ol {
-    list-style-type: decimal;
-}
-
-.teamContainer {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.teamMmeber {
-    text-align: center;
-    margin: 10px;
-}
+  }
+  
+  /* Paragraph styles */
+  .p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  /* List styles */
+  .ol {
+    margin-bottom: 20px;
+  }
+  
+  .li {
+    font-size: 1rem;
+  }
+  
+  /* Section heading styles */
+  .h2 {
+    color: #4caf50; /* Your desired color */
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
