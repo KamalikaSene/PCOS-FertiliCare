@@ -46,15 +46,8 @@
   font-size: 96px;
 }
 
-.desc{
-  font-size: 20px;
-}
-.brands{
-  width: 500px;
-  height: 50px;
-  position: relative;
-  filter: grayscale(1);
-}
+
+
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
