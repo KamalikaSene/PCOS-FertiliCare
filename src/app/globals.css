@@ -13,27 +13,8 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: rgb(255, 248, 248);
-  color: black;
-  
-}
-
-
 a {
-  text-decoration: none ;
+  text-decoration: none;
   color: inherit;
 }
-
-.container {
-  width: 100%;
-  margin: auto;
-  padding-left: 0px;
-  padding-right: 0px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;  
-}
-
 
