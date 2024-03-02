@@ -6,5 +6,10 @@ export class AuthController {
     constructor(private readonly authService : AuthService){}
 
     @Post('signup')
-    as
+    async signUp(){
+        try{
+            const token = await this.authService.signUp();
+            return {token};
+        }catch(error)
+    }
 }

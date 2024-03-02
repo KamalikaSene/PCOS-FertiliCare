@@ -1,9 +1,11 @@
-import { Module } from '@nestjs/common';
+import { Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { DoctorsModule } from './doctors/doctors.module';
 import { AuthModule } from './auth/auth.module';
+import { ErrorsModule } from './errors/errors.module';
+import { GlobalErrorModule } from './global-error/global-error.module';
 
 //testing
 
@@ -14,8 +16,10 @@ import { AuthModule } from './auth/auth.module';
     ),
     DoctorsModule,
     AuthModule,
+    ErrorsModule,
+    GlobalErrorModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 });
-export class AppModule {};
+export class AppModule implements NestModule{};
