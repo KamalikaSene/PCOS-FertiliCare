@@ -1,6 +1,8 @@
 .container {
-  display: flex;
   gap: 100px;
+  widht:max;
+  background-color:#ACFADF;
+
 }
 
 .textContainer {
@@ -15,12 +17,94 @@
 }
 
 .title{
-  font-size: 54px;
+  font-size: 40px;
+ 
+  margin-top:30px;
+  margin-bottom:30px;
+  display:flex;
+  
 }
 
 .desc{
   font-size: 20px;
   font-weight: 300;
+  max-width: auto;
+  margin:20px;
+  padding: 20px;
+  background-color: pink; /* Light gray background */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+ 
+}
+.values{
+  display:flex;
+  font-size: 20px;
+  font-weight: 300;
+  max-width: 3000px;
+  margin: 20px;
+  padding: 20px;
+  background-color: pink; /* Light gray background */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.mission{
+  display:flex;
+  font-size: 20px;
+  font-weight: 300;
+  max-width: auto;
+  margin: 20px;
+  padding: 20px;
+  background-color: pink; /* Light gray background */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+.image1{
+  display: flex;
+  gap: 50px;
+  max-width: 300px;
+  height:250px; 
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius:30px;
+}
+.teamMember{
+  display:;
+}
+
+.paradiv{
+  display:flex;
+  font-size: 20px;
+  font-weight: 300;
+  max-width: auto;
+  margin: 20px;
+  padding: 20px;
+  background-color: white; /* Light gray background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+.ourteam{
+  display:flex;
+  font-size: 20px;
+  font-weight: 300;
+  max-width: auto;
+  margin: 20px;
+  padding: 20px;
+  background-color: pink; /* Light gray background */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  flex-direction:coloumn;
+}
+.image2{
+  max-width: 190px;
+  height:170px; 
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 35px;
+  margin-right: 35px;
+  border-radius:30px;
 }
 
 .boxes{
@@ -38,24 +122,27 @@
 .box h1{
   color: var(--btn);
 }
-
-.imgContainer {
-  flex: 1;
-  position: relative;
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.img{
-  object-fit: contain;
+.memberText {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-  .container {
+  .teamMember {
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
-  .boxes{
-    flex-direction: column;
-    gap: 50px;
+  .image1, .image2 {
+    margin:  auto; /* Center images horizontally */
+    display:flex;
+    flex:1;
   }
 }
