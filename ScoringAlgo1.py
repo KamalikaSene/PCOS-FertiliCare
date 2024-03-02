@@ -1,4 +1,5 @@
 #case B 
+allocated_values = []
 def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     # Define thresholds for each variable, this is a dicltionary of thresholds 
     bmi_thresholds = {'low': 23 , 'medium': 25 , "high":25 }
@@ -104,12 +105,31 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     else:
         return 'High risk'
 
+
+
+def assign_value(risk):
+    # Allocate values based on risk
+    if risk == 'Low risk':
+        allocated_value = 2
+    elif risk == 'Medium risk':
+        allocated_value = 4
+    else:
+        allocated_value = 6
+
+    
+    allocated_values.append(allocated_value)
+    print("Allocated Value:", allocated_value)
+    print("Allocated Values List:", allocated_values) 
+
 # Example usage
-bmi = 20
-menstrual_cycle = 2
-fsh_lh_ratio = 0.8
-prolactin = 25
+bmi = 35
+menstrual_cycle = 4
+fsh_lh_ratio = 4
+prolactin = 28
 
 risk = assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin)
+assign_value(risk)
+
 print("Risk of infertility:", risk)
+
 print()
