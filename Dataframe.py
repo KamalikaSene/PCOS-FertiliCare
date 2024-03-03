@@ -32,3 +32,5 @@ print("Accuracy:", accuracy)
 print("Confusion Matrix:\n", conf_matrix)
 print("Classification Report:\n", class_report)
 
+results_list = []
+results_list.append({'Accuracy': accuracy, 'Confusion Matrix': conf_matrix, 'Classification Report': class_report})
