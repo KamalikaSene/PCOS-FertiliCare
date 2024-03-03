@@ -18,7 +18,7 @@ export class AuthService {
     try {
       if (userDto.password !== userDto.confirmPassword) {
         throw new ValidationError(
-          'Password and Confirm Password does not matching',
+          'Password and Confirm Password does not match',
         );
       }
       const encryptedPassword = await bcrypt.hash(userDto.password, 12);
