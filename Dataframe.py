@@ -9,3 +9,5 @@ data = {
 
 df = pd.DataFrame(data)
 df.head()
+
+from sklearn.model_selection import train_test_split
