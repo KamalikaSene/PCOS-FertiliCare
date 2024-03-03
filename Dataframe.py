@@ -6,3 +6,6 @@ data = {
     'Feature2': np.random.randint(0, 2, size=100),
     'Target': np.random.randint(0, 2, size=100)
 }
+
+df = pd.DataFrame(data)
+df.head()
