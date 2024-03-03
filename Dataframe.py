@@ -16,3 +16,5 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 X = df[['Feature1', 'Feature2']]
 y = df['Target']
+
+X_strain, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
