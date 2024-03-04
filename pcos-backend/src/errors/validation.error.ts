@@ -1,7 +1,5 @@
-import { HttpStatus } from "@nestjs/common";
-
-export class ValidationError extends Error{
-  constructor(message: String) {
+export class ValidationError extends Error {
+  constructor(message: string) {
     super(message);
     this.name = 'ValidationError';
   }
