@@ -1,4 +1,4 @@
-import { Controller, HttpException, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, HttpException, HttpStatus, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 
 @Controller('auth')
@@ -29,5 +29,5 @@ export class AuthController {
       }
       throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
     }
-}
+  }
 }
