@@ -1,5 +1,5 @@
 import { Injectable, NestMiddleware, HttpStatus } from '@nestjs/common';
-import { Request, Response, NextFunction } from '@nestjs/common';
+import { Request, Response, NextFunction } from 'express';
 import { NotFoundError } from 'src/errors/not-found.error';
 import { ValidationError } from 'src/errors/validation.error';
 import { ForbiddenError } from 'src/errors/forbidden.error';
