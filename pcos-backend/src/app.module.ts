@@ -22,4 +22,4 @@ import { GlobalErrorModule } from './global-error/global-error.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule implements NestModule{};
+export class AppModule {};
