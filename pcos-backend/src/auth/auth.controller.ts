@@ -13,10 +13,11 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('signup')
-  async signUp(@Body() signUpDto: signUpDto) {
+  async signUp(@Body() signupDto: signUpDto) {
     try {
-      const token = await this.authService.signUp(signUpDto);
-      return { token };
+      const token = await this.authService.signUp(signupDto);
+      return { token, signupDto };
+      
     } catch (error) {
       throw new HttpException(
         'Error while signing up',

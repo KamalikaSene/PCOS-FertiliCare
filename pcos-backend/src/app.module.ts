@@ -1,4 +1,4 @@
-import { Module, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -22,4 +22,4 @@ import { GlobalErrorModule } from './global-error/global-error.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {};
+export class AppModule {}
