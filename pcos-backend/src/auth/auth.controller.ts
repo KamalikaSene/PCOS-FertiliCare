@@ -1,14 +1,21 @@
-import { Body, Controller, HttpException, HttpStatus, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  HttpException,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
+import { signUpDto, LoginDto } from './auth.dto';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('signup')
-  async signUp() {
+  async signUp(@Body() signUpDto: signUpDto) {
     try {
-      const token = await this.authService.signUp();
+      const token = await this.authService.signUp(signUpDto);
       return { token };
     } catch (error) {
       throw new HttpException(
@@ -19,9 +26,9 @@ export class AuthController {
   }
 
   @Post('login')
-  async logIn(@Body() userDto: any) {
+  async logIn(@Body() loginDto: LoginDto) {
     try {
-      const token = await this.authService.logIn(userDto);
+      const token = await this.authService.logIn(loginDto);
       return { token };
     } catch (error) {
       if (error instanceof HttpException) {

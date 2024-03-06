@@ -3,6 +3,7 @@ import * as bcrypt from 'bcrypt';
 import { ValidationError } from 'src/errors/validation.error';
 import { NotFoundError } from 'src/errors/not-found.error';
 import { ForbiddenError } from 'src/errors/forbidden.error';
+import { signUpDto, LoginDto } from './auth.dto';
 //import * as jwt from 'jsonwebtoken';
 
 @Injectable()
@@ -14,14 +15,14 @@ export class AuthService {
     //return jwt.sign({ userId }, this.JWT_SECRET);
   }
 
-  async signUp(userDto: any): Promise<{ token: string }> {
+  async signUp(signUpDto: signUpDto): Promise<{ token: string }> {
     try {
-      if (userDto.password !== userDto.confirmPassword) {
+      if (signUpDto.password !== signUpDto.confirmPassword) {
         throw new ValidationError(
           'Password and Confirm Password does not match',
         );
       }
-      const encryptedPassword = await bcrypt.hash(userDto.password, 12);
+      const encryptedPassword = await bcrypt.hash(signUpDto.password, 12);
       const userId = '1234567890';
       const token = this.signToken(userId);
       return { token };
@@ -30,9 +31,9 @@ export class AuthService {
     }
   }
 
-  async logIn(userDto: any): Promise<{ token: string }> {
+  async logIn(loginDto: LoginDto): Promise<{ token: string }> {
     try {
-      const { email, password } = userDto;
+      const { email, password } = loginDto;
       if (!email || !password) {
         throw new ValidationError('Please include email and password.');
       }

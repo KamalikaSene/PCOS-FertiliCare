@@ -6,7 +6,7 @@ import { ForbiddenError } from 'src/errors/forbidden.error';
 
 @Injectable()
 export class GlobalErrorMiddleware implements NestMiddleware {
-  use(error: any, req: Request, res: Response, next: NextFunction) {
+  use(req: Request, res: Response, next: (error: any) => void)) {
     console.error(error);
     let statusCode = HttpStatus.INTERNAL_SERVER_ERROR;
     let errorMessage = 'Internal Server Error';
