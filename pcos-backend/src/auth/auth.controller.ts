@@ -7,6 +7,9 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { signUpDto, LoginDto } from './auth.dto';
+import { ValidationError } from 'src/errors/validation.error';
+import { NotFoundError } from 'src/errors/not-found.error';
+import { ForbiddenError } from 'src/errors/forbidden.error';
 
 @Controller('auth')
 export class AuthController {
@@ -18,10 +21,18 @@ export class AuthController {
       const token = await this.authService.signUp(signupDto);
       return { token, signupDto };
     } catch (error) {
-      throw new HttpException(
-        'Error while signing up',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      if (error instanceof ValidationError) {
+        throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+      } else if (error instanceof NotFoundError) {
+        throw new HttpException(error.message, HttpStatus.NOT_FOUND);
+      } else if (error instanceof ForbiddenError) {
+        throw new HttpException(error.message, HttpStatus.FORBIDDEN);
+      } else {
+        throw new HttpException(
+          'Error while signing up',
+          HttpStatus.INTERNAL_SERVER_ERROR,
+        );
+      }
     }
   }
 
@@ -31,10 +42,15 @@ export class AuthController {
       const token = await this.authService.logIn(loginDto);
       return { token, loginDto };
     } catch (error) {
-      if (error instanceof HttpException) {
-        throw error; // If the error is already an HttpException, rethrow it
+      if (error instanceof ValidationError) {
+        throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+      } else if (error instanceof NotFoundError) {
+        throw new HttpException(error.message, HttpStatus.NOT_FOUND);
+      } else if (error instanceof ForbiddenError) {
+        throw new HttpException(error.message, HttpStatus.FORBIDDEN);
+      } else {
+        throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
       }
-      throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
     }
   }
 }

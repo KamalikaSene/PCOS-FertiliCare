@@ -17,7 +17,7 @@ export class AuthService {
 
   async signUp(signUpDto: signUpDto): Promise<{ token: string }> {
     try {
-      if (signUpDto.password !== signUpDto.confirmPassword) {
+      if (signUpDto.password != signUpDto.confirmPassword) {
         throw new ValidationError(
           'Password and Confirm Password does not match',
         );
