@@ -1,12 +1,21 @@
 #case B 
+
 allocated_values = []
+
 def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
+    global allocated_values
+
     # Define thresholds for each variable, this is a dicltionary of thresholds 
     bmi_thresholds = {'low': 23 , 'medium': 25 , "high":25 }
     menstrual_cycle_thresholds = {'low':  2 , 'medium': 4  , "high": 4 } # 'regular' = 2 , 'irregular'= 4 
     fsh_lh_ratio_thresholds = {'low': 1 , 'medium': 0.7 , 'high': 0.4}
-    prolactin_thresholds = {'low': 25 , 'medium': 50 , 'high': 100 }#add proper threashholds
+    prolactin_thresholds = {'low': 25 , 'medium': 50 , 'high': 100 }
 
+    # Assign weights to variables
+    weights = {'bmi': 0.8, 'menstrual_cycle': 0.6, 'fsh_lh_ratio': 0.4, 'prolactin': 0.2}
+
+    # Define thresholds for each variable, this is a dicltionary of thresholds 
+    
     """Underweight: BMI less than 18.5
     Normal weight: BMI 18.5 to 22.9
     Overweight: BMI 23 to 24.9
@@ -30,9 +39,6 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     Prolactin	- 	0.2
 
     """
-
-    # Assign weights to variables
-    weights = {'bmi': 0.8, 'menstrual_cycle': 0.6, 'fsh_lh_ratio': 0.4, 'prolactin': 0.2}
 
     # Map variable values to risk levels from each row for each of the 3 variables
     def map_to_category(value, thresholds):
@@ -99,16 +105,15 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
 
     # Interpret cumulative risk score
     if 0 <= cumulative_risk_score <= 0.3:
-        return 'Low risk'
+        risk = 'Low risk'
     elif 0.31 <= cumulative_risk_score <= 1.3:
-        return 'Medium risk'
+        risk = 'Medium risk'
     else:
-        return 'High risk'
+        risk = 'High risk'
 
 
-
-def assign_value(risk):
     # Allocate values based on risk
+    
     if risk == 'Low risk':
         allocated_value = 2
     elif risk == 'Medium risk':
@@ -121,15 +126,17 @@ def assign_value(risk):
     print("Allocated Value:", allocated_value)
     print("Allocated Values List:", allocated_values) 
 
+    return risk 
+
 # Example usage
-bmi = 35
+bmi = 35 
 menstrual_cycle = 4
-fsh_lh_ratio = 4
-prolactin = 28
+fsh_lh_ratio = 0.8
+prolactin = 24
 
 risk = assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin)
-assign_value(risk)
 
 print("Risk of infertility:", risk)
+print("Allocated Values List:", allocated_values)
 
 print()
