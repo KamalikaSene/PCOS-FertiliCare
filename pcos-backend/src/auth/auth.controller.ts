@@ -17,7 +17,6 @@ export class AuthController {
     try {
       const token = await this.authService.signUp(signupDto);
       return { token, signupDto };
-      
     } catch (error) {
       throw new HttpException(
         'Error while signing up',
@@ -30,7 +29,7 @@ export class AuthController {
   async logIn(@Body() loginDto: LoginDto) {
     try {
       const token = await this.authService.logIn(loginDto);
-      return { token };
+      return { token, loginDto };
     } catch (error) {
       if (error instanceof HttpException) {
         throw error; // If the error is already an HttpException, rethrow it
