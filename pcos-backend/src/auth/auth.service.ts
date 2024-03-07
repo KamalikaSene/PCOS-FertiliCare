@@ -50,7 +50,7 @@ export class AuthService {
       if (!email || !password) {
         throw new ValidationError('Please include email and password.');
       }
-      const existingUser = await UserModel.findOne({ email });
+      const existingUser = await UserModel.findOne({ email }).exec();
 
       if (!existingUser) {
         throw new NotFoundError('You are not registered. Please sign up first');
