@@ -20,9 +20,8 @@
     Prolactin	- 	0.2
     """
 
-# /Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/allocated_values.txt'
-# Function to write allocated values to a file
 import pandas as pd
+from tabulate import tabulate
 
 # Function to write allocated values to a file
 def write_allocated_values_to_file(values):
@@ -31,6 +30,10 @@ def write_allocated_values_to_file(values):
     with open(file_path, 'w') as file:  # Open file in write mode to clear its contents
         for value in values:
             file.write(str(value) + '\n')
+
+# Function to add allocated values as a new column to the DataFrame
+def add_allocated_values_to_dataframe(df, allocated_values):
+    df['Allocated Values'] = allocated_values
 
 # Function to assess infertility risk
 def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
@@ -114,7 +117,16 @@ for index, row in df.iterrows():
 # Write the allocated values to file after all rows have been processed
 write_allocated_values_to_file(allocated_values)
 
+# Add allocated values as a new column to the DataFrame
+add_allocated_values_to_dataframe(df, allocated_values)
+
+# Convert DataFrame to tabular format using tabulate
+table = tabulate(df, headers='keys', tablefmt='grid')
+
+# Print the tabular format
+print(table)
+
+# Write the DataFrame to a CSV file
+df.to_csv('/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/allocated_values.csv', index=False)
+
 print("All rows processed.")
-
-
-# /Users/isiri/Documents/finaldataset.xlsx
