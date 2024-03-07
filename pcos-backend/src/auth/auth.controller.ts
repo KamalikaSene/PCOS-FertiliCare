@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Get,
   HttpException,
   HttpStatus,
   Post,
@@ -38,6 +39,24 @@ export class AuthController {
 
   @Post('login')
   async logIn(@Body() loginDto: LoginDto) {
+    try {
+      const token = await this.authService.logIn(loginDto);
+      return { token, loginDto };
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
+      } else if (error instanceof NotFoundError) {
+        throw new HttpException(error.message, HttpStatus.NOT_FOUND);
+      } else if (error instanceof ForbiddenError) {
+        throw new HttpException(error.message, HttpStatus.FORBIDDEN);
+      } else {
+        throw new HttpException('Unauthorized', HttpStatus.UNAUTHORIZED);
+      }
+    }
+  }
+
+  @Get('find-info')
+  async getInfo(@Body() loginDto: LoginDto) {
     try {
       const token = await this.authService.logIn(loginDto);
       return { token, loginDto };

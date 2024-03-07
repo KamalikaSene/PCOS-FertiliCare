@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { ValidationError } from 'src/errors/validation.error';
 import { NotFoundError } from 'src/errors/not-found.error';
@@ -10,6 +10,7 @@ import { UserModel } from 'src/models/user.schema';
 
 @Injectable()
 export class AuthService {
+  private readonly logger = new Logger(AuthService.name);
   private readonly JWT_SECRET = 'pjpdv';
 
   private signToken(userId: string): string {
@@ -38,6 +39,7 @@ export class AuthService {
       const token = this.signToken(savedUser._id.toString());
       return { token };
     } catch (error) {
+      this.logger.error(`Error during signUp: ${error.message}`);
       throw new ValidationError(error.message);
     }
   }
@@ -68,5 +70,32 @@ export class AuthService {
     } catch (error) {
       throw new ValidationError(error.message);
     }
+  }
+
+  async getInfo(loginDto: LoginDto): Promise<{ token: string }> {
+    const { email, password } = loginDto;
+    if (!email || !password) {
+      throw new ValidationError('Please include email and password.');
+    }
+    const existingUser = await UserModel.findOne({ email });
+
+    if (!existingUser) {
+      throw new NotFoundError('You are not registered. Please sign up first');
+    }
+
+    const isPasswordMatches = await bcrypt.compare(
+      password,
+      existingUser.password,
+    );
+    if (!isPasswordMatches) {
+      throw new ForbiddenError('Password is incorrect.');
+    }
+    // You would typically retrieve the user ID from the user object
+    //const userId = '1234567890';
+    const token = this.signToken(existingUser._id.toString());
+    return { token };
+  }
+  catch(error) {
+    throw new ValidationError(error.message);
   }
 }
