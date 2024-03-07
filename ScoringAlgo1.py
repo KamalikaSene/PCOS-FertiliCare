@@ -1,3 +1,26 @@
+"""Underweight: BMI less than 18.5
+    Normal weight: BMI 18.5 to 22.9
+    Overweight: BMI 23 to 24.9
+    Obesity: BMI 25 or greater
+
+    Prolactin 
+    Low : <25
+    Mid : 25 - 50
+    High : 25 - 100 & > 100
+
+    fsh/lh 
+    low - 0.7 - 1
+    mid - 0.4 - 0.7
+    high - less than 0.4 
+
+    weights :
+    BMI	- 		0.8
+    Cycle	- 		0.6
+    FSH/LH ratio	- 	0.4
+    Prolactin	- 	0.2
+    """
+import pandas as pd
+
 # Function to write allocated values to a file
 def write_allocated_values_to_file(values):
     with open('allocated_values.txt', 'a') as file:
@@ -96,13 +119,23 @@ def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
 
     return risk
 
-# Example usage
-bmi = 28 
-menstrual_cycle = 2
-fsh_lh_ratio = 0.8
-prolactin = 24
+# Read the Excel sheet
+df = pd.read_excel('/Users/isiri/Documents/finaldataset.xlsx')
 
-risk = assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin)
+# Iterate over each row in the DataFrame
+for index, row in df.iterrows():
+    # Extract the values for the four variables from the row
+    bmi = row['BMI']
+    menstrual_cycle = row['Cycle(R/I)']
+    fsh_lh_ratio = row['FSH/LH']
+    prolactin = row['PRL(ng/mL)']
 
-print("Risk of infertility:", risk)
-print("Allocated Values List:", allocated_values)
+    # Assess infertility risk
+    risk = assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin)
+
+    # Print the risk
+    print(f"Row {index + 1}: Risk of infertility: {risk}")
+
+print("All rows processed.")
+
+# /Users/isiri/Documents/finaldataset.xlsx
