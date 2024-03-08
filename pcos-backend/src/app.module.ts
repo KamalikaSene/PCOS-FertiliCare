@@ -13,12 +13,12 @@ import { UserSchema } from './models/user.schema';
 @Module({
   imports: [
     MongooseModule.forRoot(
-      'mongodb+srv://PCOSFertilicareDB:dX9JJLFDPzvnwvLm@cluster0.zpgsbrp.mongodb.net/PCOSFerilicare?retryWrites=true&w=majority&appName=Cluster0',
+      `mongodb+srv://PCOSFertilicareDB:dX9JJLFDPzvnwvLm@cluster0.zpgsbrp.mongodb.net/PCOSFerilicare?retryWrites=true&w=majority&appName=Cluster0`,
       {
         //useNewUrlParser: true,
         //useUnifiedTopology: true,
-        connectTimeoutMS: 30000000,
-        socketTimeoutMS: 30000000,
+        connectTimeoutMS: 60000,
+        socketTimeoutMS: 60000,
       },
     ),
     MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),

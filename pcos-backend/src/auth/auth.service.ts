@@ -14,28 +14,32 @@ export class AuthService {
   private readonly JWT_SECRET = 'pjpdv';
 
   private signToken(userId: string): string {
-    return '';
+    return userId;
     //return jwt.sign({ userId }, this.JWT_SECRET);
   }
 
   async signUp(signUpDto: signUpDto): Promise<{ token: string }> {
     try {
-      if (signUpDto.password != signUpDto.confirmPassword) {
+      if (signUpDto.password !== signUpDto.confirmPassword) {
         throw new ValidationError(
           'Password and Confirm Password does not match',
         );
       }
       const encryptedPassword = await bcrypt.hash(signUpDto.password, 12);
       //const userId = '1234567890';
-      const newUser = new UserModel({
+      // const newUser = new UserModel({
+      //   email: signUpDto.email,
+      //   password: encryptedPassword,
+      // });
+
+      const savedUser = await UserModel.create({
         email: signUpDto.email,
         password: encryptedPassword,
       });
-
-      const savedUser = await newUser.save();
+      //await newUser.save();
       if (!savedUser || !savedUser._id) {
         throw new ValidationError('Failed to save user to the database');
-      }
+      };
       const token = this.signToken(savedUser._id.toString());
       return { token };
     } catch (error) {
