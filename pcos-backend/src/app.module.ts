@@ -7,13 +7,16 @@ import { AuthModule } from './auth/auth.module';
 import { ErrorsModule } from './errors/errors.module';
 import { GlobalErrorModule } from './global-error/global-error.module';
 import { UserSchema } from './models/user.schema';
+import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
+//import { RiskPredictionService } from './risk-prediction/risk-prediction.service';
+//import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
 
 //testing
 
 @Module({
   imports: [
     MongooseModule.forRoot(
-      `mongodb+srv://PCOSFertilicareDB:dX9JJLFDPzvnwvLm@cluster0.zpgsbrp.mongodb.net/PCOSFerilicare?retryWrites=true&w=majority&appName=Cluster0`,
+      `mongodb+srv://PCOSFertilicareDB:dX9JJLFDPzvnwvLm@cluster0.zpgsbrp.mongodb.net/PCOSFerilicare`,
       {
         //useNewUrlParser: true,
         //useUnifiedTopology: true,
@@ -26,6 +29,7 @@ import { UserSchema } from './models/user.schema';
     AuthModule,
     ErrorsModule,
     GlobalErrorModule,
+    RiskPredictionServiceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
