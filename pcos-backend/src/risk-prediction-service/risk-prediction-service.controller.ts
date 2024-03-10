@@ -1,18 +1,14 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { RiskPredictionService } from './risk-prediction.service';
 
-@Controller('risk-prediction-service')
-export class RiskPredictionServiceController {
+@Controller('predict')
+export class PredictionController {
   constructor(private readonly riskPredictionService: RiskPredictionService) {}
 
   @Post()
-  async predictRisk(@Body() inputData: any): Promise<any> {
-    try {
-      const prediction =
-        await this.riskPredictionService.predictRisk(inputData);
-      return { prediction };
-    } catch (error) {
-      console.log(error);
-    }
+  async predictInfertilityRisk(@Body() patientData: any): Promise<string> {
+    const prediction =
+      await this.riskPredictionService.predictInfertilityRisk(patientData);
+    return prediction;
   }
 }

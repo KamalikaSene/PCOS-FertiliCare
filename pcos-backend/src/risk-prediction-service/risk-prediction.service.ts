@@ -1,32 +1,25 @@
+//'C:\\Users\\ranug\\Desktop\\PCOSFC\\DecisionTree\\DecisionTree.py'
 import { Injectable } from '@nestjs/common';
-const { PythonShell } = require('python-shell');
-import { InputData } from './input-data.interface';
+import * as child_process from 'child_process';
 
 @Injectable()
 export class RiskPredictionService {
-  async predictRisk(inputData: InputData): Promise<any> {
-    const scriptPath = 'C:\\Users\\ranug\\Desktop\\PCOSFC\\DecisionTree\\DecisionTree.py'; // Path to the Python script
+  async predictInfertilityRisk(patientData: any): Promise<string> {
+    const pythonProcess = child_process.spawn('python', [
+      'C:\\Users\\ranug\\Desktop\\PCOSFC\\DecisionTree\\DecisionTree.py',
+      JSON.stringify(patientData),
+    ]);
 
-    // Prepare input data as arguments
-    const options = {
-      mode: 'text',
-      pythonOptions: ['-u'], // unbuffered output
-      args: [
-        inputData.bmi,
-        inputData.cycle,
-        inputData.prolactin,
-        inputData.fshLhRatio,
-      ],
-    };
-
-    return new Promise((resolve, reject) => {
-      PythonShell.run(scriptPath, options, (err, results) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve(results);
-        }
+    const { stdout } = await new Promise((resolve, reject) => {
+      pythonProcess.stdout.on('data', (data) => {
+        resolve(data.toString());
+      });
+      pythonProcess.on('error', (error) => {
+        reject(error);
       });
     });
+
+    // Assuming the Python script outputs the prediction as a string
+    return stdout.trim();
   }
 }
