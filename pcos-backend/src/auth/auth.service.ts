@@ -7,6 +7,7 @@ import { signUpDto, LoginDto } from './auth.dto';
 import { User } from 'src/models/user.schema';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { JwtService } from '@nestjs/jwt';
 //import { User } from 'src/models/user.schema';
 //import * as jwt from 'jsonwebtoken';
 
@@ -14,6 +15,7 @@ import { InjectModel } from '@nestjs/mongoose';
 export class AuthService {
   constructor(
     @InjectModel(User.name) private readonly UserModel: Model<User>,
+    private jwtService: JwtService
   ) {}
 
   private readonly logger = new Logger(AuthService.name);
@@ -58,7 +60,7 @@ export class AuthService {
     }
   }
 
-  async logIn(loginDto: LoginDto): Promise<{ token: string }> {
+  async logIn(loginDto: LoginDto): Promise<{ access_token: string }> {
     try {
       console.log(loginDto)
       const { email, password } = loginDto;
@@ -66,7 +68,7 @@ export class AuthService {
         throw new ValidationError('Please include email and password.');
       }
       const existingUser = await this.UserModel.findOne({email}).exec();
-      
+      const payload = { sub : existingUser.id, email: existingUser.email}
 
       if (!existingUser) {
         console.log(existingUser)
@@ -86,7 +88,8 @@ export class AuthService {
       // You would typically retrieve the user ID from the user object
       //const userId = '1234567890';
       const token = this.signToken(existingUser._id.toString());
-      return { token };
+      return { access_token: await this.jwtService.signAsync(payload), };
+      
     } catch (error) {
       throw new ValidationError(error.message);
     }
