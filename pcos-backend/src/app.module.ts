@@ -7,7 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { ErrorsModule } from './errors/errors.module';
 import { GlobalErrorModule } from './global-error/global-error.module';
 import { UserSchema } from './models/user.schema';
-import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
+//import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
 //import { RiskPredictionService } from './risk-prediction/risk-prediction.service';
 //import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
 
@@ -29,7 +29,7 @@ import { RiskPredictionServiceModule } from './risk-prediction-service/risk-pred
     AuthModule,
     ErrorsModule,
     GlobalErrorModule,
-    RiskPredictionServiceModule,
+    //RiskPredictionServiceModule,
   ],
   controllers: [AppController],
   providers: [AppService],

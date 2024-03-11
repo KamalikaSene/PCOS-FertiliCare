@@ -20,7 +20,7 @@ export class AuthController {
   async signUp(@Body() signupDto: signUpDto) {
     try {
       const token = await this.authService.signUp(signupDto);
-      return { token };
+      return{ token, signupDto };
     } catch (error) {
       if (error instanceof ValidationError) {
         throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
