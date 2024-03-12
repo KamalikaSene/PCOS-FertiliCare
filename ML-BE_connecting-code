@@ -1,20 +1,43 @@
 #Importing the necessary files to connect with backend - Flask.
+
 from flask import Flask,request, url_for, redirect, render_template
 
 #Importing pickle, package to which converts python data in to serialized program.
+
 import pickle
 import numpy as np
 
 #initializing a FLAK application.
+
 pp = Flask(__name__)
 
 #Opening the file again by loading from a pickle file.
+
 model=pickle.load(open('model.pkl','rb'))
 
 #Default function which get triggered whenever the URL open.
 #render_template() Bracket should contain which html file should this take the information from
-app.route('/')
+
+@app.route('/')
 def hello_world():
     return render_template()
+
+#Form data is sent to a URL called /predict.
+
+@app.route('/predict',methods=['POST','GET'])
+#Defining how to get the data from the form
+def predict():
+    int_features=[int(x) for x in request.form.values()]
+    #Get all the form values converting it into a list and all the values to integers
+    #Converting list into a numpy array
+    final=[np.array(int_features)]
+    print(int_features)
+    print(final)
+    #Model is stored as "NAME" and name.predict...should come
+    #As for now, lets say mode is saved as model. So, model.predict_proa(final)
+    #Saved it in a variable called prediction
+    prediction=model.predict_proba(final)
+    #Format the prediction value and give it nearly for 2 decimal places
+    output='{0:.{1}f}'.format(prediction[0][1], 2)
 
 
