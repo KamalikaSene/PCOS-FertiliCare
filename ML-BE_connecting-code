@@ -1,13 +1,20 @@
-#Importing the necessary files to connect with backend - Flask
+#Importing the necessary files to connect with backend - Flask.
 from flask import Flask,request, url_for, redirect, render_template
 
-#Importing pickle, package to which converts python data in to serialized program
+#Importing pickle, package to which converts python data in to serialized program.
 import pickle
 import numpy as np
 
-#initializing a FLAK application
+#initializing a FLAK application.
 pp = Flask(__name__)
 
 #Opening the file again by loading from a pickle file.
 model=pickle.load(open('model.pkl','rb'))
+
+#Default function which get triggered whenever the URL open.
+#render_template() Bracket should contain which html file should this take the information from
+app.route('/')
+def hello_world():
+    return render_template()
+
 
