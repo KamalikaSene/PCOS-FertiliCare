@@ -41,3 +41,14 @@ def predict():
     output='{0:.{1}f}'.format(prediction[0][1], 2)
 
 
+#Sample margin values are given
+    #As for now, 0.5 margin will be given
+    #html file need to be inserted
+    #Lines should complete with missing code alues
+    
+    if output>str(0.5):
+        return render_template('.html',pred='Message should be written\nProbability  {}'.format(output),)
+    else:
+        return render_template('.html',pred='Message should be written.\n Probability {}'.format(output),)
+
+
