@@ -50,5 +50,11 @@ def predict():
         return render_template('.html',pred='Message should be written\nProbability  {}'.format(output),)
     else:
         return render_template('.html',pred='Message should be written.\n Probability {}'.format(output),)
+    
+  
+if __name__ == '__main__':
+    app.run(debug=True)
+    
+
 
 
