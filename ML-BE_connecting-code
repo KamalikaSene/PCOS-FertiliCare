@@ -8,3 +8,6 @@ import numpy as np
 #initializing a FLAK application
 pp = Flask(__name__)
 
+#Opening the file again by loading from a pickle file.
+model=pickle.load(open('model.pkl','rb'))
+
