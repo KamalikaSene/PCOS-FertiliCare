@@ -24,7 +24,8 @@ export default function Home() {
         <img src="/aboutpcos.png" alt="Image 2" />
       </Link>
     
-      <div className={styles.leftBottomContainer}>
+
+      <Link href="/Predict-PCOS" className={styles.leftBottomContainer}>
         <img src="/predictpcos1.jpeg" alt="Image 1" />
         <div>
           {/* Content for the left container */}
@@ -33,7 +34,7 @@ export default function Home() {
          
           </p>
         </div>
-      </div>
+      </Link>
 
       <div className={styles.rightBottomContainer}>
         <div>
