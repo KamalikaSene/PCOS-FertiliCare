@@ -1,2 +1,5 @@
 #Importing the necessary files to connect with backend - Flask
 from flask import Flask,request, url_for, redirect, render_template
+#Importing pickle, package to which converts python data in to serialized program
+import pickle
+import numpy as np
