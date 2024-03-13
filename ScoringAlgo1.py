@@ -38,45 +38,83 @@ def add_allocated_values_to_dataframe(df, allocated_values):
 # Function to assess infertility risk
 def assess_infertility_risk(bmi, menstrual_cycle, fsh_lh_ratio, prolactin):
     # Define thresholds for each variable
-    bmi_thresholds = {'low': 18.5, 'normal': 22.9, 'overweight': 24.9, 'obesity': float('inf')}
-    prolactin_thresholds = {'low': 25, 'mid': 50, 'high': 100}
-    fsh_lh_ratio_thresholds = {'low': 1, 'mid': 0.7, 'high': 0.4}
+    bmi_thresholds = {'low': 23 , 'medium': 25 , "high":25 }
+    menstrual_cycle_thresholds = {'low':  2 , 'medium': 4  , "high": 4 } # 'regular' = 2 , 'irregular'= 4 
+    fsh_lh_ratio_thresholds = {'low': 1 , 'medium': 0.7 , 'high': 0.4}
+    prolactin_thresholds = {'low': 25 , 'medium': 50 , 'high': 100 }
 
     # Assign weights to variables
     weights = {'bmi': 0.8, 'menstrual_cycle': 0.6, 'fsh_lh_ratio': 0.4, 'prolactin': 0.2}
 
+    # Map variable values to risk levels from each row for each of the 3 variables
+    def map_to_category(value, thresholds):
+        if value < thresholds['low']:
+            return 'low'
+        elif value < thresholds['medium']:
+            return 'medium'
+        else:
+            return 'high'
+        
+    def map_to_category_cycle(value, thresholds):
+        if value == thresholds['low']:
+            return 'low'
+        else:
+            return 'high'
+        
+    def map_to_category_fsh_lh_ratio(value, thresholds):
+        if value < thresholds['high']:
+            return 'high'
+        elif value < thresholds['medium']:
+            return 'medium'
+        elif value > thresholds["medium"] and value <= 1:
+            return 'low'
+        else:#outliers 
+            return 'low'          
     # Map BMI to risk category
-    if bmi < bmi_thresholds['low']:
-        bmi_category = 'Underweight'
-    elif bmi <= bmi_thresholds['normal']:
-        bmi_category = 'Normal weight'
-    elif bmi <= bmi_thresholds['overweight']:
-        bmi_category = 'Overweight'
-    else:
-        bmi_category = 'Obesity'
-
+    bmi_category = map_to_category(bmi, bmi_thresholds)
+    # print("BMI: ",bmi_category)
+    # Map cycle to risk category
+    menstrual_cycle_category  = map_to_category_cycle(menstrual_cycle , menstrual_cycle_thresholds)
+    # print("CYCLE: ",menstrual_cycle_category)
+    # Map fsh/lh to risk category
+    fsh_lh_ratio_category  = map_to_category_fsh_lh_ratio(fsh_lh_ratio, fsh_lh_ratio_thresholds)
+    # print("FSH/LH: ",fsh_lh_ratio_category)
     # Map prolactin to risk category
-    if prolactin < prolactin_thresholds['low']:
-        prolactin_category = 'Low'
-    elif prolactin <= prolactin_thresholds['mid']:
-        prolactin_category = 'Mid'
-    else:
-        prolactin_category = 'High'
+    prolactin_category = map_to_category(prolactin ,prolactin_thresholds)
+    # print("PROLACTIN: ",prolactin_category)
 
-    # Map fsh/lh ratio to risk category
-    if fsh_lh_ratio >= fsh_lh_ratio_thresholds['low']:
-        fsh_lh_ratio_category = 'Low'
-    elif fsh_lh_ratio >= fsh_lh_ratio_thresholds['mid']:
-        fsh_lh_ratio_category = 'Mid'
-    else:
-        fsh_lh_ratio_category = 'High'
+    # # Map BMI to risk category
+    # if bmi < bmi_thresholds['low']:
+    #     bmi_category = 'Underweight'
+    # elif bmi <= bmi_thresholds['normal']:
+    #     bmi_category = 'Normal weight'
+    # elif bmi <= bmi_thresholds['overweight']:
+    #     bmi_category = 'Overweight'
+    # else:
+    #     bmi_category = 'Obesity'
+
+    # # Map prolactin to risk category
+    # if prolactin < prolactin_thresholds['low']:
+    #     prolactin_category = 'Low'
+    # elif prolactin <= prolactin_thresholds['mid']:
+    #     prolactin_category = 'Mid'
+    # else:
+    #     prolactin_category = 'High'
+
+    # # Map fsh/lh ratio to risk category
+    # if fsh_lh_ratio >= fsh_lh_ratio_thresholds['low']:
+    #     fsh_lh_ratio_category = 'Low'
+    # elif fsh_lh_ratio >= fsh_lh_ratio_thresholds['mid']:
+    #     fsh_lh_ratio_category = 'Mid'
+    # else:
+    #     fsh_lh_ratio_category = 'High'
 
     # Calculate cumulative risk score
     cumulative_risk_score = (
-            weights['bmi'] * (1 if bmi_category == 'Underweight' else (0.5 if bmi_category == 'Normal weight' else 0.1)) +
-            weights['menstrual_cycle'] * (1 if menstrual_cycle <= 2 else (0.5 if menstrual_cycle <= 4 else 0.1)) +
-            weights['fsh_lh_ratio'] * (1 if fsh_lh_ratio_category == 'Low' else (0.5 if fsh_lh_ratio_category == 'Mid' else 0.1)) +
-            weights['prolactin'] * (1 if prolactin_category == 'Low' else (0.5 if prolactin_category == 'Mid' else 0.1))
+        weights['bmi'] * (0.1 if bmi_category == 'low' else (0.5 if bmi_category == 'medium' else 1)) +
+        weights['menstrual_cycle'] * (0.1 if menstrual_cycle_category == 'low' else (0.5 if menstrual_cycle_category == 'medium' else 1)) +
+        weights['fsh_lh_ratio'] * (0.1 if fsh_lh_ratio_category == 'low' else (0.5 if fsh_lh_ratio_category == 'medium' else 1)) +
+        weights['prolactin'] * (0.1 if prolactin_category == 'low' else (0.5 if prolactin_category == 'medium' else 1))
     )
 
     # Interpret cumulative risk score
@@ -127,6 +165,6 @@ table = tabulate(df, headers='keys', tablefmt='grid')
 print(table)
 
 # Write the DataFrame to a CSV file
-df.to_csv('/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/allocated_values.csv', index=False)
+df.to_csv('/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/allocated_values3.csv', index=False)
 
 print("All rows processed.")
