@@ -1,19 +1,16 @@
 import * as mongoose from 'mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
 
-const validateRegistrationNumber = (value: string) => {
-  // Check if the value is exactly five digits
-  return /^\d{5}$/.test(value);
-};
+export type UserDocument = HydratedDocument<DoctorAuth>;
 
-export const DoctorAuthSchema = new mongoose.Schema({
-  registrationNumber: {
-    type: String,
-    required: true,
-    unique: true,
-    validate: {
-      validator: validateRegistrationNumber,
-      message: 'Registration number must be exactly five digits',
-    },
-  },
-  // Add other fields as needed
-});
+
+@Schema()
+export class DoctorAuth {
+  @Prop()
+  registrationNumber: string;
+}
+
+export const DoctorAuthSchema = SchemaFactory.createForClass(DoctorAuth);
+
+
