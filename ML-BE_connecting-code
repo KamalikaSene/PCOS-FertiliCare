@@ -51,8 +51,9 @@ def predict():
     else:
         return render_template('.html',pred='Message should be written.\n Probability {}'.format(output),)
     
-  
+# Checks if the script is being run directly 
 if __name__ == '__main__':
+    # Starts the Flask development server with debugging enable
     app.run(debug=True)
     
 
