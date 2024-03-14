@@ -1,36 +1,59 @@
 <!DOCTYPE html>
-<html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<html>
 <head>
   <meta charset="UTF-8">
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
- <div class="login">
-	<h1>Infertitliy Risk Prediction</h1>
+  <div class="login">
+    <h1>Infertility Risk Prediction</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="BMI" placeholder="BMI" required="required" />
-        <input type="text" name="Cycle(R/I)" placeholder="Cycle(R/I)" required="required" />
-		<input type="text" name="FSH/LH" placeholder="FSH/LH" required="required" />
-		<input type="text" name="PRL(ng/mL)" placeholder="PRL(ng/mL)" required="required" />
+    <!-- Main Input For Receiving Query to our ML -->
+    <form id="predictionForm" action="{{ url_for('predict') }}" method="post">
+      <input type="text" name="BMI" placeholder="BMI" required="required" />
+      
+      <!-- Label for Cycle(R/I) dropdown selector -->
+      <label for="cycleSelector">Cycle(R/I)</label>
+      
+      <!-- Dropdown selector for Cycle(R/I) -->
+      <select id="cycleSelector" required="required">
+        <option value="Regular">Regular</option>
+        <option value="Irregular">Irregular</option>
+      </select>
+      
+      <!-- Hidden input field to store the translated value -->
+      <input type="hidden" id="cycleValue" name="Cycle(R/I)" value="">
+      
+      <input type="text" name="FSH/LH" placeholder="FSH/LH" required="required" />
+      <input type="text" name="PRL(ng/mL)" placeholder="PRL(ng/mL)" required="required" />
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
-   <br>
-   <br>
-   {{ prediction_text }}
+    <br>
+    <br>
+    {{ prediction_text }}
+  </div>
 
- </div>
-
-
+  <!-- JavaScript to update hidden input field value -->
+  <script>
+    document.getElementById("predictionForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      var cycleSelector = document.getElementById("cycleSelector");
+      var cycleValue = cycleSelector.value === "Regular" ? "2" : "4"; // Translate the value to "2" for Regular and "4" for Irregular
+      
+      // Update the hidden input field value
+      document.getElementById("cycleValue").value = Cycle(R/I);
+      
+      // Submit the form
+      this.submit();
+    });
+  </script>
 </body>
 </html>
