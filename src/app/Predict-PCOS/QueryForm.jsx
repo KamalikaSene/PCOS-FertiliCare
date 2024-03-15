@@ -1,6 +1,26 @@
 "use client";
 import { useState } from 'react';
 
+export default function ContactForm() {
+  const [pcos, setPcos] = useState('');
+  const [age, setAge] = useState('');
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
+  const [bmi, setBmi] = useState('');
+  const [cycle, setCycle] = useState('');
+  const [pregnant, setPregnant] = useState('');
+  const [abortion, setAbortion] = useState('');
+  const [fsh, setFsh] = useState('');
+  const [lh, setLh] = useState('');
+  const [fshLhRatio, setFshLhRatio] = useState('');
+  const [prolactin, setProlactin] = useState('');
+  const [weightgain, setWeightgain] = useState('');
+  const [fastfood, setFastfood] = useState('');
+  const [exercise, setExercise] = useState('');
+  
+  const [error, setError] = useState([]);
+  const [success, setSuccess] = useState(false);
+
 return (
     <>
       <form
