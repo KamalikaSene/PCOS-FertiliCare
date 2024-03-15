@@ -12,6 +12,8 @@ import { DoctorAuthModule } from './doctor-auth/doctor-auth.module';
 //import { RiskPredictionService } from './risk-prediction/risk-prediction.service';
 //import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
 
+import { ContactModule } from './contact/contact.module';
+
 //testing
 
 @Module({
@@ -32,8 +34,15 @@ import { DoctorAuthModule } from './doctor-auth/doctor-auth.module';
     GlobalErrorModule,
     DoctorAuthModule,
     //RiskPredictionServiceModule,
+    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
+
+
+//     MongooseModule.forRoot(
+//       'mongodb+srv://PCOSFertilicareDB:dX9JJLFDPzvnwvLm@cluster0.zpgsbrp.mongodb.net/PCOSFerilicare'
+//     ),
