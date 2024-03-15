@@ -21,7 +21,70 @@ export default function ContactForm() {
   const [error, setError] = useState([]);
   const [success, setSuccess] = useState(false);
 
-return (
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch('http://localhost:3000/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        pcos,
+        age,
+        weight,
+        height,
+        bmi,
+        cycle,
+        pregnant,
+        abortion,
+        fsh,
+        lh,
+        fshLhRatio,
+        prolactin,
+        weightgain,
+        fastfood,
+        exercise,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error('Error response:', response);
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const responseData = await response.json();
+    const { msg, success } = responseData;
+    setError(msg);
+    setSuccess(success);
+
+    if (success) {
+      setPcos('');
+      setAge('');
+      setWeight('');
+      setHeight('');
+      setBmi('');
+      setCycle('');
+      setPregnant('');
+      setAbortion('');
+      setFsh('');
+      setLh('');
+      setFshLhRatio('');
+      setProlactin('');
+      setWeightgain('');
+      setFastfood('');
+      setExercise('');
+    }
+  } catch (error) {
+    console.error('Error sending data:', error);
+    setError(['An Error Occurred. Please Try Again.']);
+    setSuccess(false);
+  }
+};
+ 
+  return (
     <>
       <form
         onSubmit={handleSubmit}
