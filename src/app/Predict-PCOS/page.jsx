@@ -10,7 +10,7 @@ const Predict = () => {
 
   
   return (
-    <div>hiii</div>
+    <div>hiii byee</div>
   );
 };
 
