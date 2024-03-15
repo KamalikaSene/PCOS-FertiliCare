@@ -90,9 +90,9 @@ const handleSubmit = async (e) => {
         onSubmit={handleSubmit}
         className="py-4 mt-4 border-t flex flex-col gap-5"
       >
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="pcos">Evidence of PCOS (If Yes = 1 / If No = 0)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setPcos(e.target.value)}
             value={pcos}
             type="number"
@@ -101,9 +101,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="age">Patient's Age (In Years)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setAge(e.target.value)}
             value={age}
             type="number"
@@ -112,9 +112,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="weight">Patient's Weight (In Kilogram)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setWeight(e.target.value)}
             value={weight}
             type="number"
@@ -123,9 +123,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="height">Patient's Height (In Centimeters)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setHeight(e.target.value)}
             value={height}
             type="number"
@@ -134,9 +134,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="bmi">Patient's BMI</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setBmi(e.target.value)}
             value={bmi}
             type="number"
@@ -145,9 +145,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="cycle">Patient's Menstrual Cycle (If Regular = 2 / If Irregular = 4)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setCycle(e.target.value)}
             value={cycle}
             type="number"
@@ -156,9 +156,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="pregnant">Pregnancy Status of the Patient (If Pregnant = 1 / If Pregnant = 0)	</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setPregnant(e.target.value)}
             value={pregnant}
             type="number"
@@ -167,9 +167,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="abortion">Patient's Abortion Count</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setAbortion(e.target.value)}
             value={abortion}
             type="number"
@@ -178,9 +178,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="fsh">Patient's FSH Level (In mIU/mL)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setFsh(e.target.value)}
             value={fsh}
             type="number"
@@ -189,9 +189,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="lh">Patient's LH Level (In mIU/mL)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setLh(e.target.value)}
             value={lh}
             type="number"
@@ -200,9 +200,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="fshLhRatio">Patient's FSH/LH Ratio</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setFshLhRatio(e.target.value)}
             value={fshLhRatio}
             type="number"
@@ -211,9 +211,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="prolactin">Patient's Prolactin Level (In ng/mL)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setProlactin(e.target.value)}
             value={prolactin}
             type="number"
@@ -222,9 +222,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="weightgain">Evidence of Weight Gain (If Yes = 1 / If No = 0)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setWeightgain(e.target.value)}
             value={weightgain}
             type="number"
@@ -233,9 +233,9 @@ const handleSubmit = async (e) => {
           />
         </div>
 
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="fastfood">Patient's Fast Food Intake (If Yes = 1 / If No = 0)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setFastfood(e.target.value)}
             value={fastfood}
             type="number"
@@ -244,9 +244,9 @@ const handleSubmit = async (e) => {
           />
         </div>
         
-        <div>
+        <div className="flex flex-col gap-2">
           <label htmlFor="exercise">Evidence of Regular Exercise (If Yes = 1 / If No = 0)</label>
-          <input
+          <input className="shadow-md px-6 py-2 border border-slate-300"
             onChange={(e) => setExercise(e.target.value)}
             value={exercise}
             type="number"
@@ -256,7 +256,7 @@ const handleSubmit = async (e) => {
         </div>
 
         <button className="bg-green-700 p-3 text-white font-bold" type="submit">
-          Send
+          Submit
         </button>
       </form>
 
