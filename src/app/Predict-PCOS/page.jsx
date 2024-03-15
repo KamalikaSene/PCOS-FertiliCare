@@ -20,3 +20,13 @@ const Predict = () => {
 };
 
 export default Predict;
+
+// const Predict = () => {
+
+  
+//   return (
+//     <div>hiii</div>
+//   );
+// };
+
+// export default Predict;
