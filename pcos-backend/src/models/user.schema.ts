@@ -6,7 +6,13 @@ export type UserDocument = HydratedDocument<User>;
 @Schema()
 export class User {
   @Prop()
+  username: string;
+
+  @Prop()
   email: string;
+
+  @Prop()
+  SLMCRegNo: string;
 
   @Prop()
   password: string;

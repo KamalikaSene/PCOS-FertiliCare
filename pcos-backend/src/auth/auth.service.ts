@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { ValidationError } from 'src/errors/validation.error';
 import { NotFoundError } from 'src/errors/not-found.error';
@@ -8,12 +8,15 @@ import { User } from 'src/models/user.schema';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { JwtService } from '@nestjs/jwt';
+import { DoctorAuthService } from 'src/doctor-auth/doctor-auth/doctor-auth.service';
 //import { User } from 'src/models/user.schema';
 //import * as jwt from 'jsonwebtoken';
 
 @Injectable()
 export class AuthService {
   constructor(
+    @Inject(DoctorAuthService)
+    private readonly doctorAuth: DoctorAuthService,
     @InjectModel(User.name) private readonly UserModel: Model<User>,
     private jwtService: JwtService
   ) {}
@@ -28,6 +31,7 @@ export class AuthService {
 
   async signUp(signUpDto: signUpDto): Promise<{token:string}> {
     try {
+      console.log(signUpDto)
       if (signUpDto.password !== signUpDto.confirmPassword) {
         throw new ValidationError(
           'Password and Confirm Password does not match',
