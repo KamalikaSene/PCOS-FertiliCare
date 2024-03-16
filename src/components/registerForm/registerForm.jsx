@@ -3,12 +3,19 @@
 import { register } from "@/lib/action";
 import styles from "./registerForm.module.css";
 import { useFormState } from "react-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 const RegisterForm = () => {
   const [state, formAction] = useFormState(register, undefined);
+
+  const [username,setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [SLMCRegNo, setSLMCRegNo] = useState('')
+  const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+  const [error, setError] = useState([])
 
   const router = useRouter();
 
@@ -16,14 +23,48 @@ const RegisterForm = () => {
     state?.success && router.push("/login");
   }, [state?.success, router]);
 
+  const handleSubmit = async (e) =>{
+    e.preventDefault()
+
+    const res = await fetch('http://localhost:4000/auth/signup', {
+      method : "POST",
+      headers: {
+        "Content-type" : "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        email,
+        SLMCRegNo,
+        password,
+        confirmPassword
+      })
+    })
+
+    const {msg} = await res.json();
+    setError(msg)
+    console.log(error)
+  }
+
+  
+
   return (
-    <form className={styles.form} action={formAction}>
-      <input type="text" placeholder=" enter username" name="username" />
-      <input type="email" placeholder=" enter email" name="email" />
-      <input type="email" placeholder=" enter SLMC registeration number" name="email" />
-      <input type="password" placeholder="enter password" name="password" />
+    <form onSubmit = {handleSubmit} className={styles.form} action={formAction}>
+      <input onChange = {(e) => setUsername(e.target.value)}
+      value={username}
+      type="text" placeholder=" enter username" name="username" />
+
+      <input onChange = {(e) => setEmail(e.target.value)}
+      value={email}type="email" placeholder=" enter email" name="email" />
+
+      <input onChange = {(e) => setSLMCRegNo(e.target.value)}
+      value={SLMCRegNo}type="text" placeholder=" enter the SLMC registeration number" name="email" />
+
+      <input onChange = {(e) => setPassword(e.target.value)}
+      value={password}type="password" placeholder="enter password" name="password" />
      
       <input
+        onChange = {(e) => setConfirmPassword(e.target.value)}
+        value={confirmPassword}
         type="password"
         placeholder="confirm password"
         name="passwordRepeat"
