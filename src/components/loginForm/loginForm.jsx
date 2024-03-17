@@ -6,6 +6,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const LoginForm = () => {
       if (!response.ok) {
         throw new Error("Login failed");
       }
+      setSuccess("Login successful!"); // Set success message on successful login
       // Handle successful login (e.g., store token in localStorage)
     } catch (error) {
       setError("Login failed. Please check your credentials.");
@@ -42,6 +44,7 @@ const LoginForm = () => {
       />
       <button type="submit">Login</button>
       {error && <p>{error}</p>}
+      {success && <p>{success}</p>}
     </form>
   );
 };
