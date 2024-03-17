@@ -1,24 +1,50 @@
 "use client";
-
-import { login } from "@/lib/action";
+import { useState } from "react";
 import styles from "./loginForm.module.css";
-import { useFormState } from "react-dom";
-import Link from "next/link";
 
 const LoginForm = () => {
-  const [state, formAction] = useFormState(login, undefined);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:4000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+      });
+      if (!response.ok) {
+        throw new Error("Login failed");
+      }
+      // Handle successful login (e.g., store token in localStorage)
+    } catch (error) {
+      setError("Login failed. Please check your credentials.");
+    }
+  };
 
   return (
-    <form className={styles.form} action={formAction}>
-      <input type="text" placeholder="enter username" name="username" />
-      <input type="password" placeholder="enter password" name="password" />
-      <button>Login</button>
-      {state?.error}
-      <Link href="/register">
-        {"Don't have an account?  "} <button>Sign-Up</button>
-      </Link>
+    <form className={styles.form} onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="enter username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="enter password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Login</button>
+      {error && <p>{error}</p>}
     </form>
   );
 };
 
 export default LoginForm;
+
