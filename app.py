@@ -35,7 +35,7 @@ def predict():
     features = np.array([[bmi, cycle_value, fsh_lh, prl_ng_ml]])
 
     # Predict
-    prediction = model.predict(features)
+    prediction = model.predict(features) 
 
     # Check if the MongoDB connection is established
     if mongo.db is None:
@@ -52,17 +52,6 @@ def predict():
     }
     mongo.db.form_data.insert_one(form_data)
 
-    # Map prediction to risk level
-    if prediction == 6:
-        risk_level = "High"
-    elif prediction == 4:
-        risk_level = "Medium"
-    elif prediction == 2:
-        risk_level = "Low"
-    else:
-        risk_level = "Unknown"
-
-    return render_template("index.html", prediction_text="The infertility risk level is {}".format(risk_level))
-
+    
 if __name__ == "__main__":
     flask_app.run(debug=True)
