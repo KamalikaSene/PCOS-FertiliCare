@@ -4,7 +4,6 @@ from flask_pymongo import PyMongo
 import pickle
 import logging
 
-# testing
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 
