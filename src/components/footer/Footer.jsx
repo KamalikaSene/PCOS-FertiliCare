@@ -10,11 +10,11 @@ import { FaEnvelope } from "react-icons/fa";
 function Footer() {
 	return (
 		<>
-			<div className="bg-green-100 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-20">
+			<div className="bg-green-50 h-1/2 w-full flex md:flex-row flex-col justify-around items-start p-1">
 				<div className="p-5 ">
 					<ul>
 					<p className="text-gray-800 font-bold text-3xl pb-6">
-						Reach&nbsp;<span className="text-blue-600">Us</span>
+						Reach&nbsp;<span className="text-pink-500">Us</span>
 					</p>
 						<div className="flex gap-6 pb-5">
 							<FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
@@ -54,13 +54,13 @@ function Footer() {
 					</ul>
 				</div>
 			</div>
-			<div className="flex flex-col justify-center items-center text-center  p-5 bg-green-100">
-				<h2 className=" text-gray-500 ">
+			<div className="flex flex-col justify-center items-center text-center  p-5 bg-green-50">
+				<h4 className=" text-gray-500 ">
 					© 2023-2024 All rights reserved PCOS-Fertilicare
 					<span className="hover:text-blue-600 cursor-pointer">
 						
 					</span>
-				</h2>
+				</h4>
 			</div>
 		</>
 	);
