@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-//import { PredictionResultController } from './predictionResult.controller';
+import { PredictionResultController } from './predictionResult.controller';
 import { PredictionResultService } from './predictionResult.service';
 
 import {
@@ -14,7 +14,7 @@ import {
       { name: PredictionResult.name, schema: PredictionResultSchema },
     ]),
   ],
-  //controllers: [PredictionResultController],
+  controllers: [PredictionResultController],
   providers: [PredictionResultService],
 })
 export class PredictionResultModule {}
