@@ -8,7 +8,7 @@ export type UserDocument = HydratedDocument<DoctorAuth>;
 @Schema()
 export class DoctorAuth {
   @Prop()
-  registrationNumber: string;
+  registrationNumber: number;
 }
 
 export const DoctorAuthSchema = SchemaFactory.createForClass(DoctorAuth);

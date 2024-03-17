@@ -10,6 +10,7 @@ export class DoctorAuthService {
 
   async authenticateDoctor(registrationNumber: string): Promise<boolean> {
     const doctor = await this.doctorModel.findOne({ registrationNumber }).exec();
+    console.log(doctor)
     return !!doctor;
   }
 }

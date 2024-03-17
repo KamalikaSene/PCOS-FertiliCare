@@ -32,6 +32,18 @@ export class AuthService {
   async signUp(signUpDto: signUpDto): Promise<{token:string}> {
     try {
       console.log(signUpDto)
+
+      const registereddoctor = this.doctorAuth.authenticateDoctor(
+        signUpDto.SLMCRegNo,
+      );
+
+      console.log(registereddoctor)
+
+      if (!registereddoctor) {
+        console.log('Invalid SLMC Registration Number.')
+        throw new ValidationError('Invalid SLMC Registration Number.');
+      }
+
       if (signUpDto.password !== signUpDto.confirmPassword) {
         throw new ValidationError(
           'Password and Confirm Password does not match',
