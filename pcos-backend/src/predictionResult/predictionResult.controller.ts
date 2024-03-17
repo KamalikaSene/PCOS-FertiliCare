@@ -9,7 +9,7 @@ export class PredictionResultController {
     private readonly PredictionResultService: PredictionResultService,
   ) {}
 
-  @Post('contact')
+  @Post('prediction')
   async create(
     @Body() createPredictionResultDto: CreatePredictionResultDto,
     @Res() res: Response,
