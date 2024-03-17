@@ -67,12 +67,12 @@ export class AuthService {
   async logIn(loginDto: LoginDto): Promise<{ access_token: string }> {
     try {
       console.log(loginDto)
-      const { email, password } = loginDto;
-      if (!email || !password) {
-        throw new ValidationError('Please include email and password.');
+      const { username, password } = loginDto;
+      if (!username || !password) {
+        throw new ValidationError('Please include username and password.');
       }
-      const existingUser = await this.UserModel.findOne({email}).exec();
-      const payload = { sub : existingUser.id, email: existingUser.email}
+      const existingUser = await this.UserModel.findOne({username}).exec();
+      const payload = { sub : existingUser.id, username: existingUser.username}
 
       if (!existingUser) {
         console.log(existingUser)
@@ -92,6 +92,7 @@ export class AuthService {
       // You would typically retrieve the user ID from the user object
       //const userId = '1234567890';
       const token = this.signToken(existingUser._id.toString());
+      console.log(token)
       return { access_token: await this.jwtService.signAsync(payload), };
       
     } catch (error) {
@@ -100,11 +101,11 @@ export class AuthService {
   }
 
   async getInfo(loginDto: LoginDto): Promise<{ token: string }> {
-    const { email, password } = loginDto;
-    if (!email || !password) {
-      throw new ValidationError('Please include email and password.');
+    const { username, password } = loginDto;
+    if (!username || !password) {
+      throw new ValidationError('Please include username and password.');
     }
-    const existingUser = await this.UserModel.findOne({ email });
+    const existingUser = await this.UserModel.findOne({ username });
 
     if (!existingUser) {
       throw new NotFoundError('You are not registered. Please sign up first');
