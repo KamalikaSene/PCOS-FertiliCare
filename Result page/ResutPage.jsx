@@ -12,3 +12,11 @@ const ResultPage = () => {
   const [predictionResult, setPredictionResult] = useState(null);
 
   
+  useEffect(() => {
+    // Function to fetch prediction result from Flask API
+    const fetchPredictionResult = async () => {
+      try {
+        // Make a POST request to your Flask API endpoint
+        const response = await axios.post('http://localhost:5000/predict_infertility_risk', {
+          // Pass input data for prediction if needed
+        });
