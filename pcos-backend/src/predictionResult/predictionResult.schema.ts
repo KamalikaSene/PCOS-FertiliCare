@@ -18,7 +18,7 @@ export class PredictionResult {
   cycle_value: number;
 
   @Prop()
-  prediction: string;
+  risk_level: string;
 }
 
 export const PredictionResultSchema =
