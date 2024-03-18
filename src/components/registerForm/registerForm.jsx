@@ -12,7 +12,7 @@ const RegisterForm = () => {
 
   const [username,setUsername] = useState('')
   const [email, setEmail] = useState('')
-  const [SLMCRegNo, setSLMCRegNo] = useState('')
+  const [registrationNumber, setregistrationNumber] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState([])
@@ -34,7 +34,7 @@ const RegisterForm = () => {
       body: JSON.stringify({
         username,
         email,
-        SLMCRegNo,
+        registrationNumber,
         password,
         confirmPassword
       })
@@ -56,8 +56,8 @@ const RegisterForm = () => {
       <input onChange = {(e) => setEmail(e.target.value)}
       value={email}type="email" placeholder=" enter email" name="email" />
 
-      <input onChange = {(e) => setSLMCRegNo(e.target.value)}
-      value={SLMCRegNo}type="text" placeholder=" enter the SLMC registeration number" name="email" />
+      <input onChange = {(e) => setregistrationNumber(e.target.value)}
+      value={registrationNumber}type="text" placeholder=" enter the SLMC registeration number" name="email" />
 
       <input onChange = {(e) => setPassword(e.target.value)}
       value={password}type="password" placeholder="enter password" name="password" />

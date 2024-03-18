@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import styles from "./loginForm.module.css";
+import Link from "next/link";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -45,6 +46,10 @@ const LoginForm = () => {
       <button type="submit">Login</button>
       {error && <p>{error}</p>}
       {success && <p>{success}</p>}
+
+      <Link href="/register">
+        {"Dont have an account?"} <button>Sign-up</button>
+      </Link>
     </form>
   );
 };
