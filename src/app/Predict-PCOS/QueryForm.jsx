@@ -2,30 +2,59 @@
 import { useState } from 'react';
 
 const QueryForm = () => {
-  const [BMI, setBMI] = useState('');
+  const [bmi, setBMI] = useState('');
   const [cycle, setCycle] = useState('Regular');
-  const [FSHLH, setFSHLH] = useState('');
-  const [PRL, setPRL] = useState('');
+  const [fsh_lh, setFSHLH] = useState('');
+  const [prl_ng_ml, setPRL] = useState('');
   const [predictionText, setPredictionText] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Translate the cycle value to "2" for Regular and "4" for Irregular
-    const cycleValue = cycle === 'Regular' ? '2' : '4';
+    const cycle_value = cycle === 'Regular' ? '2' : '4';
+  
+    try {
+      const response = await fetch('http://localhost:3000/predict', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 'BMI': bmi, 'Cycle(R/I)': cycle_value, 'FSH/LH': fsh_lh, 'PRL(ng/mL)': prl_ng_ml }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      setPredictionText(data.prediction_text);
+    } catch (error) {
+      console.error('Error predicting:', error);
+      setPredictionText('Error predicting. Please try again.');
+    }
+  };
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
 
-   // Submit the form data to the prediction API
-   const response = await fetch('/api/predict', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ BMI, 'Cycle(R/I)': cycleValue, 'FSH/LH': FSHLH, 'PRL(ng/mL)': PRL }),
-  });
+//     // Translate the cycle value to "2" for Regular and "4" for Irregular
+//     const cycle_value = cycle === 'Regular' ? '2' : '4';
 
-  const data = await response.json();
-  setPredictionText(data.prediction_text);
-};
+//     try {
+//       const response = await fetch('/predict', {  // Updated endpoint
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ 'BMI' : bmi, 'Cycle(R/I)': cycle_value, 'FSH/LH': fsh_lh, 'PRL(ng/mL)': prl_ng_ml }),
+//       });
+    
+//     const data = await response.json();
+//     setPredictionText(data.prediction_text);
+//   } catch (error) {
+//     console.error('Error predicting:', error);
+//   }
+// };
 
 return (
   <div className="login">
@@ -34,7 +63,7 @@ return (
       <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
         <div className="flex items-center">
           <h4 className="mr-2">Enter BMI</h4>
-          <input type="text" value={BMI} onChange={(e) => setBMI(e.target.value)} placeholder="BMI" required className="p-3 border border-gray-300 rounded-md w-32 ml-24" />
+          <input type="text" value={bmi} onChange={(e) => setBMI(e.target.value)} placeholder="BMI" required className="p-3 border border-gray-300 rounded-md w-32 ml-24" />
         </div>
         <div className="flex items-center">
 
@@ -46,11 +75,11 @@ return (
               </div>
               <div className="flex items-center">
                 <h4 className="mr-2">Enter FSH/LH Ratio</h4>
-                <input type="text" value={FSHLH} onChange={(e) => setFSHLH(e.target.value)} placeholder="FSH/LH" required className="p-3 border border-gray-300 rounded-md w-32 ml-7" />
+                <input type="text" value={fsh_lh} onChange={(e) => setFSHLH(e.target.value)} placeholder="FSH/LH" required className="p-3 border border-gray-300 rounded-md w-32 ml-7" />
               </div>
               <div className="flex items-center">
                 <h4 className="mr-2">Enter Polactine Level</h4>
-                <input type="text" value={PRL} onChange={(e) => setPRL(e.target.value)} placeholder="PRL(ng/mL)" required className="p-3 border border-gray-300 rounded-md w-32 ml-4" />
+                <input type="text" value={prl_ng_ml} onChange={(e) => setPRL(e.target.value)} placeholder="PRL(ng/mL)" required className="p-3 border border-gray-300 rounded-md w-32 ml-4" />
               </div>
               <button type="submit" className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 mt-10 mb-10 block mx-auto">
                 Predict Infertility Risk Level
