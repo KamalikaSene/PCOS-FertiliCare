@@ -35,3 +35,19 @@ const ResultPage = () => {
      // Call the fetchPredictionResult function
      fetchPredictionResult();
    }, []);
+
+   // Function to get the color class based on the result
+   const getColorClass = (result) => {
+     switch (result) {
+       case 'High':
+         return styles.highRisk;
+       case 'Mid':
+         return styles.midRisk;
+       case 'Low':
+         return styles.lowRisk;
+       default:
+         return '';
+     }
+   };
+
+   
