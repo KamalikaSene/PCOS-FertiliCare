@@ -6,3 +6,9 @@ import axios from 'axios';
 
 import Layout from '../components/Layout'; //layout component
 import styles from '../styles/resultPage.module.css'; // Import the CSS file
+
+//Initializes state variable predictionResult using the useState hook.
+const ResultPage = () => {
+  const [predictionResult, setPredictionResult] = useState(null);
+
+  
