@@ -1,0 +1,19 @@
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:100px;
+  margin-bottom:100px;
+}
+
+.wrapper{
+  width: 500px;
+  background-color: pink;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 30px;
+  border-radius: 5px;
+}
