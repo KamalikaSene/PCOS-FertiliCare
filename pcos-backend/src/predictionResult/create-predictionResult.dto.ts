@@ -3,5 +3,5 @@ export class CreatePredictionResultDto {
   readonly fsh_lh: number;
   readonly prl_ng_ml: number;
   readonly cycle_value: number;
-  readonly prediction: string;
+  readonly risk_level: string;
 }
