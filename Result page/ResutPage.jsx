@@ -15,8 +15,10 @@ const ResultPage = () => {
   useEffect(() => {
     // Function to fetch prediction result from Flask API
     const fetchPredictionResult = async () => {
+
       try {
-        // Make a POST request to your Flask API endpoint
+        // Make a POST request to Flask API endpoint
+        // Replace http://localhost:5000/predict_infertility_risk with the actual URL of Flask API endpoint for predicting infertility risk.
         const response = await axios.post('http://localhost:5000/predict_infertility_risk', {
           // Pass input data for prediction if needed
         });
@@ -36,6 +38,7 @@ const ResultPage = () => {
      fetchPredictionResult();
    }, []);
 
+
    // Function to get the color class based on the result
    const getColorClass = (result) => {
      switch (result) {
@@ -49,9 +52,10 @@ const ResultPage = () => {
          return '';
      }
    };
+   
 
    //Layout returned
-   
+
    return (
     <Layout>
       <div className={styles.container}>
