@@ -50,4 +50,26 @@ const ResultPage = () => {
      }
    };
 
+   //Layout returned
    
+   return (
+    <Layout>
+      <div className={styles.container}>
+        <h1 className={styles.heading}>Infertility Risk Prediction Result</h1>
+        <div className={styles.resultContainer}>
+          <h2 className={styles.resultText}>Your infertility risk level:</h2>
+          {predictionResult && (
+            <p className={`${styles.resultText} ${getColorClass(predictionResult)}`}>
+              {predictionResult}
+            </p>
+          )}
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default ResultPage;
+
+
+
