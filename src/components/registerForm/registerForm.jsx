@@ -57,7 +57,7 @@ const RegisterForm = () => {
       value={email}type="email" placeholder=" enter email" name="email" />
 
       <input onChange = {(e) => setregistrationNumber(e.target.value)}
-      value={registrationNumber}type="text" placeholder=" enter the SLMC registeration number" name="email" />
+      value={registrationNumber}type="text" placeholder=" enter the SLMC registeration number" name="number" />
 
       <input onChange = {(e) => setPassword(e.target.value)}
       value={password}type="password" placeholder="enter password" name="password" />
