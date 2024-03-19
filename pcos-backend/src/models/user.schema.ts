@@ -12,7 +12,7 @@ export class User {
   email: string;
 
   @Prop()
-  SLMCRegNo: string;
+  registrationNumber: string;
 
   @Prop()
   password: string;

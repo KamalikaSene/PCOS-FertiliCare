@@ -11,6 +11,7 @@ export class DoctorAuthService {
   async authenticateDoctor(registrationNumber: number): Promise<boolean> {
     const doctor = await this.doctorModel.findOne({ registrationNumber }).exec();
     console.log(doctor)
+    
     return !!doctor;
   }
 }

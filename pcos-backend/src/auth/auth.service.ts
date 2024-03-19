@@ -32,14 +32,13 @@ export class AuthService {
   async signUp(signUpDto: signUpDto): Promise<{token:string}> {
     try {
       console.log(signUpDto)
-
       const registereddoctor = this.doctorAuth.authenticateDoctor(
-        signUpDto.SLMCRegNo,
+        signUpDto.registrationNumber,
       );
 
       console.log(registereddoctor)
 
-      if (!registereddoctor) {
+      if ((await registereddoctor) === false) {
         console.log('Invalid SLMC Registration Number.')
         throw new ValidationError('Invalid SLMC Registration Number.');
       }

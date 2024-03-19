@@ -1,7 +1,7 @@
 export class signUpDto {
   readonly username: string;
   readonly email: string;
-  readonly SLMCRegNo: number;
+  readonly registrationNumber: number;
   password: string;
   readonly confirmPassword: string;
 }
