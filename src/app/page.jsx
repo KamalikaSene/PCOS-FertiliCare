@@ -36,7 +36,7 @@ export default function Home() {
         </div>
       </Link>
 
-      <div className={styles.rightBottomContainer}>
+      <Link href="/Result-page" className={styles.rightBottomContainer}>
         <div>
           {/* Content for the right container */}
           <h2>View Past Results</h2>
@@ -44,7 +44,8 @@ export default function Home() {
           </p>
         </div>
         <img src="/viewpast1.jpeg" alt="Image 2" />
+      </Link>
       </div>
-      </div>
+     
   );
 }
