@@ -1,0 +1,38 @@
+/* styles/resultPage.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.result-container {
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.result-text {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.high-risk {
+  color: #ff0000; /* Red color for high risk */
+}
+
+.mid-risk {
+  color: #ffa500; /* Orange color for mid risk */
+}
+
+.low-risk {
+  color: #008000; /* Green color for low risk */
+}
