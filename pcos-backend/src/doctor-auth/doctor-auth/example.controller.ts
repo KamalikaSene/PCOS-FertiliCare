@@ -8,7 +8,14 @@ export class ExampleController {
   constructor(private readonly doctorAuthService: DoctorAuthService) {}
 
   @Post('authenticate-doctor')
-  async authenticateDoctor(@Body() body: DoctorAuthDto): Promise<boolean> {
-    return this.doctorAuthService.authenticateDoctor(body.registrationNumber);
+  async authenticateDoctor(@Body() body: DoctorAuthDto): Promise<{ success: boolean }> {
+    try {
+      const isValid = await this.doctorAuthService.authenticateDoctor(body.registrationNumber);
+      console.log('isValid:', isValid); // Log the isValid value
+      return { success: isValid };
+    } catch (error) {
+      console.error('Error:', error); // Log any errors that occur
+      return { success: false };
+    }
   }
 }
