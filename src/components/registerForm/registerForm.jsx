@@ -27,6 +27,12 @@ const RegisterForm = () => {
   const handleSubmit = async (e) =>{
     e.preventDefault()
 
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    if (!passwordRegex.test(password)) {
+      setError('Password must contain at least 8 characters, at least one letter or one digit is required');
+      return;
+    }
+
     const res = await fetch('http://localhost:4000/auth/signup', {
       method : "POST",
       headers: {
@@ -52,7 +58,6 @@ const RegisterForm = () => {
       setSuccess(null)
     }
    
-    
   }
 
   
