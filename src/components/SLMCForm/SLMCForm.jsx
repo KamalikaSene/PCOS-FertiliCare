@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
 import styles from "./doctor.module.css";
@@ -34,7 +33,8 @@ const SLMCForm = () => {
     } catch (error) {
       setError('An error occurred during validation');
     }
-  }
+  };
+  
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
