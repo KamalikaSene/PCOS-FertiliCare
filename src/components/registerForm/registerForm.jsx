@@ -16,6 +16,7 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState([])
+  const [success, setSuccess] = useState('')
 
   const router = useRouter();
 
@@ -40,9 +41,18 @@ const RegisterForm = () => {
       })
     })
 
-    const {msg} = await res.json();
-    setError(msg)
-    console.log(error)
+    const data = await res.json();
+    if(res.ok){
+      setError(null)
+      console.log("Registration successful");
+      setSuccess("Registration successful")
+      router.push("/login");
+    }else{
+      setError(data.message);
+      setSuccess(null)
+    }
+   
+    
   }
 
   
@@ -56,7 +66,7 @@ const RegisterForm = () => {
       <input onChange = {(e) => setEmail(e.target.value)}
       value={email}type="email" placeholder=" enter email" name="email" />
 
-      <input onChange = {(e) => setregistrationNumber(e.target.value)}
+      <input onChange = {(e) => setregistrationNumber(parseInt(e.target.value))}
       value={registrationNumber}type="text" placeholder=" enter the SLMC registeration number" name="number" />
 
       <input onChange = {(e) => setPassword(e.target.value)}
@@ -70,7 +80,8 @@ const RegisterForm = () => {
         name="passwordRepeat"
       />
       <button>Sign-Up</button>
-      {state?.error}
+      {error && <p className="error">{error}</p>}
+      {success && <p className="success">{success}</p>}
       <Link href="/login">
         Have an account ? <button>Login</button>
       </Link>
