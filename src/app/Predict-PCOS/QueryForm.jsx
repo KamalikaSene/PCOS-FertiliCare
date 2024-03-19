@@ -10,19 +10,18 @@ const QueryForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Translate the cycle value to "2" for Regular and "4" for Irregular
+
     const cycle_value = cycle === 'Regular' ? '2' : '4';
   
     try {
-      const response = await fetch('http://localhost:3000/predict', {
+      const response = await fetch('http://localhost:3000/api/patientData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 'BMI': bmi, 'Cycle(R/I)': cycle_value, 'FSH/LH': fsh_lh, 'PRL(ng/mL)': prl_ng_ml }),
+        body: JSON.stringify({ bmi, cycle_value, fsh_lh, prl_ng_ml }),
       });
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -30,31 +29,9 @@ const QueryForm = () => {
       const data = await response.json();
       setPredictionText(data.prediction_text);
     } catch (error) {
-      console.error('Error predicting:', error);
-      setPredictionText('Error predicting. Please try again.');
+      console.error('Error sending data to backend:', error);
     }
   };
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     // Translate the cycle value to "2" for Regular and "4" for Irregular
-//     const cycle_value = cycle === 'Regular' ? '2' : '4';
-
-//     try {
-//       const response = await fetch('/predict', {  // Updated endpoint
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ 'BMI' : bmi, 'Cycle(R/I)': cycle_value, 'FSH/LH': fsh_lh, 'PRL(ng/mL)': prl_ng_ml }),
-//       });
-    
-//     const data = await response.json();
-//     setPredictionText(data.prediction_text);
-//   } catch (error) {
-//     console.error('Error predicting:', error);
-//   }
-// };
 
 return (
   <div className="login">
@@ -90,8 +67,7 @@ return (
       <br />
       {predictionText && <p>{predictionText}</p>}
     </div>
-
-);
+  );
 };
 
 export default QueryForm;

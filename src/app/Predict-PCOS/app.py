@@ -10,7 +10,7 @@ model = pickle.load(open("MlModel.pkl", "rb"))
 # Define NestJS API endpoint
 NESTJS_API_URL = "http://localhost:3000/api/prediction"  # Update with your actual endpoint URL
 
-@flask_app.route("/predict")
+@flask_app.route("/")
 def Home():
     return render_template("QueryForm.jsx")
 
