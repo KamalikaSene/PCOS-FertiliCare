@@ -8,7 +8,7 @@ import { DoctorAuthDto } from './doctor-auth.dto';
 export class DoctorAuthService {
   constructor(@InjectModel(DoctorAuth.name) private readonly doctorModel: Model<DoctorAuth>) {}
 
-  async authenticateDoctor(registrationNumber: string): Promise<boolean> {
+  async authenticateDoctor(registrationNumber: number): Promise<boolean> {
     const doctor = await this.doctorModel.findOne({ registrationNumber }).exec();
     console.log(doctor)
     return !!doctor;
