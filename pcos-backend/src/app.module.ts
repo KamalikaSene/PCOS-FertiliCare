@@ -11,6 +11,7 @@ import { DoctorAuthModule } from './doctor-auth/doctor-auth.module';
 //import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
 //import { RiskPredictionService } from './risk-prediction/risk-prediction.service';
 //import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
+import { PatientDataModule } from './patientData/patientData.module';
 import { PredictionResultModule } from './predictionResult/predictionResult.module';
 import { PastResultModule } from './pastResult/pastResult.module';
 
@@ -32,6 +33,7 @@ import { PastResultModule } from './pastResult/pastResult.module';
     GlobalErrorModule,
     DoctorAuthModule,
     //RiskPredictionServiceModule,
+    PatientDataModule,
     PredictionResultModule,
     //PredictedResultsRetrievingModule,
     PastResultModule,
