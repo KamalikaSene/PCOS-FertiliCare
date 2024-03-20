@@ -1,29 +1,17 @@
 import numpy as np
 import requests
-from flask import Flask, request, render_template
+from flask import Flask, jsonify, request
 import pickle
+# import joblib
 
-# Create flask app
 flask_app = Flask(__name__)
-model = pickle.load(open("MlModel.pkl", "rb"))
+model = pickle.load(open('MlModel.pkl', "rb"))
+# model = joblib.load("C:\Users\Kamalika\Desktop\gtihub-inputquery-frontend\PCOS-FertiliCare\src\app\Predict-PCOS\MlModel.pkl",'rb')
 
 endpoint = 'http://localhost:3000/api/patientData'
-NESTJS_API_URL = "http://localhost:3000/api/prediction"
+NESTJS_API_URL = 'http://localhost:3000/api/prediction'
 
-# @flask_app.route("/")
-# def Home():
-#     return render_template("QueryForm.jsx")
-
-# @flask_app.route("/predict", methods=["POST"])
-# def predict():
-#     try:
-#         # Extract numerical feature values from form
-#         bmi = float(request.form['BMI'])
-#         fsh_lh = float(request.form['FSH/LH'])
-#         prl_ng_ml = float(request.form['PRL(ng/mL)'])
-#         cycle_value = float(request.form['Cycle(R/I)'])
-
-
+@flask_app.route('/predict', methods=['GET'])
 def fetch_patient_data(endpoint):
     try:
         response = requests.get(endpoint)
@@ -47,11 +35,8 @@ if patient_data:
         cycle_value = patient.get('cycle_value')
         print(f"Patient Data: BMI={bmi}, FSH/LH={fsh_lh}, PRL (ng/mL)={prl_ng_ml}, Cycle Value={cycle_value}")
 
-
-        # Prepare features for prediction
         features = np.array([[bmi, fsh_lh, prl_ng_ml, cycle_value]])
 
-        # Predict
         prediction = model.predict(features)
 
         # Convert prediction to JSON-serializable format
@@ -59,11 +44,7 @@ if patient_data:
 
         # Store form input and prediction in MongoDB via NestJS API
         form_data = {
-            'bmi': bmi,
-            'cycle_value': cycle_value,
-            'fsh_lh': fsh_lh,
-            'prl_ng_ml': prl_ng_ml,
-            'prediction': prediction_str
+            'risk_level': prediction_str
         }
 
         response = requests.post(NESTJS_API_URL, json=form_data)
@@ -81,13 +62,6 @@ if patient_data:
             risk_level = "Low"
         else:
             risk_level = "Unknown"
-
-        return render_template("QueryForm.jsx", prediction_text="The infertility risk level is {}".format(risk_level))
-
-    except Exception as e:
-        print("Error:", e)
-        print("Failed to connect to NestJS API")
-        return "Error occurred", 500
 
 if __name__ == "__main__":
     flask_app.run(debug=True)
