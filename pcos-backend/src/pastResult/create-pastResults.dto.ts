@@ -1,4 +1,4 @@
-export class CreatePredictionResultDto {
+export class CreatePastResultDto {
     readonly bmi: number;
     readonly fsh_lh: number;
     readonly prl_ng_ml: number;
