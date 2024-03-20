@@ -12,6 +12,7 @@ import { DoctorAuthModule } from './doctor-auth/doctor-auth.module';
 //import { RiskPredictionService } from './risk-prediction/risk-prediction.service';
 //import { RiskPredictionServiceModule } from './risk-prediction-service/risk-prediction-service.module';
 import { PredictionResultModule } from './predictionResult/predictionResult.module';
+import { PastResultModule } from './pastResult/pastResult.module';
 
 @Module({
   imports: [
@@ -32,6 +33,8 @@ import { PredictionResultModule } from './predictionResult/predictionResult.modu
     DoctorAuthModule,
     //RiskPredictionServiceModule,
     PredictionResultModule,
+    //PredictedResultsRetrievingModule,
+    PastResultModule,
   ],
   controllers: [AppController],
   providers: [AppService],
