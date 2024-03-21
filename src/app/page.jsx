@@ -30,7 +30,7 @@ export default function Home() {
         <div>
           {/* Content for the left container */}
           <h2>Predict Infertility Risk Level</h2>
-          <p>Predict infertility risk level (Restricted for medical personall only)
+          <p>Predict infertility risk level (Restricted for medical personnel only)
          
           </p>
         </div>

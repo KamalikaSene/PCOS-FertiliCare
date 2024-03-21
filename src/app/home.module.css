@@ -85,6 +85,7 @@
 .leftTopContainer:hover{
   display: flex;
   align-items: center;  
+  background-color: #20B2AA;
   cursor:pointer;
   transition: transform 0.4s ease-in-out;
   scale:1.02;
@@ -101,7 +102,7 @@
 .rightTopContainer:hover{
   display: flex;
   align-items: center;
-  background-color:lightgreen;  
+  background-color: #9ACD32;  
   cursor:pointer;
   transition: transform 0.4s ease-in-out;
   scale:1.02;
@@ -122,6 +123,24 @@
   background-color: #64CCC5;
 
   
+}
+
+.leftBottomContainer:hover{
+  display: flex;
+  align-items: center;
+  background-color:aqua;  
+  cursor:pointer;
+  transition: transform 0.4s ease-in-out;
+  scale:1.02;
+}
+
+.rightBottomContainer:hover{
+  display: flex;
+  align-items: center;
+  background-color:#ff5757;  
+  cursor:pointer;
+  transition: transform 0.4s ease-in-out;
+  scale:1.02;
 }
 
 .rightTopContainer img,
