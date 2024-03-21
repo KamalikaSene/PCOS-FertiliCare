@@ -22,16 +22,6 @@ const QueryForm = () => {
         body: JSON.stringify({ bmi, cycle_value, fsh_lh, prl_ng_ml }),
       });
 
-      const response = await fetch('/predict', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-      });
-
-      const data = await response.json();
-      setPredictionText(data.prediction_text);
-
     } catch (error) {
       console.error('Error sending data to backend:', error);
     }
