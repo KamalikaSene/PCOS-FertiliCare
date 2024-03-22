@@ -33,14 +33,14 @@ export class AuthService {
     try {
       console.log(signUpDto)
       const registereddoctor = this.doctorAuth.authenticateDoctor(
-        signUpDto.registrationNumber,
+        signUpDto
       );
 
       console.log(registereddoctor)
 
       if ((await registereddoctor) === false) {
-        console.log('Invalid SLMC Registration Number.')
-        throw new ValidationError('Invalid SLMC Registration Number.');
+        console.log('Error occurred in SLMC Registration Validation')
+        throw new ValidationError('Error occurred in SLMC Registration Validation');
       }
 
       if (signUpDto.password !== signUpDto.confirmPassword) {

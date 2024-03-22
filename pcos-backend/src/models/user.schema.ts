@@ -15,6 +15,9 @@ export class User {
   registrationNumber: string;
 
   @Prop()
+  Surname: string;
+
+  @Prop()
   password: string;
 }
 

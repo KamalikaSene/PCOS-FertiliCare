@@ -8,10 +8,11 @@ import { DoctorAuthDto } from './doctor-auth.dto';
 export class DoctorAuthService {
   constructor(@InjectModel(DoctorAuth.name) private readonly doctorModel: Model<DoctorAuth>) {}
 
-  async authenticateDoctor(registrationNumber: number): Promise<boolean> {
-    const doctor = await this.doctorModel.findOne({ registrationNumber }).exec();
-    console.log(doctor)
-    
+  async authenticateDoctor(dto: DoctorAuthDto): Promise<boolean> {
+    const { registrationNumber, Surname } = dto;
+    const doctor = await this.doctorModel.findOne({ registrationNumber, Surname }).exec();
+    console.log(doctor);
+
     return !!doctor;
   }
 }

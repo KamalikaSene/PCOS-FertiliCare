@@ -6,4 +6,10 @@ export class DoctorAuthDto {
   @IsNotEmpty()
   @Matches(/^\d{5}$/, { message: 'Registration number must be exactly five digits' })
   registrationNumber: number;
+
+
+
+  @IsString()
+  @IsNotEmpty()
+  Surname: string;
 }

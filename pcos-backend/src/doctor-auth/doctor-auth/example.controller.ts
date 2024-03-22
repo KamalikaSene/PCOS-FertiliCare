@@ -8,9 +8,9 @@ export class ExampleController {
   constructor(private readonly doctorAuthService: DoctorAuthService) {}
 
   @Post('authenticate-doctor')
-  async authenticateDoctor(@Body() body: DoctorAuthDto): Promise<{ success: boolean }> {
+  async authenticateDoctor(@Body() dto: DoctorAuthDto): Promise<{ success: boolean }> {
     try {
-      const isValid = await this.doctorAuthService.authenticateDoctor(body.registrationNumber);
+      const isValid = await this.doctorAuthService.authenticateDoctor(dto);
       console.log('isValid:', isValid); // Log the isValid value
       return { success: isValid };
     } catch (error) {
