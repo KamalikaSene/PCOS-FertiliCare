@@ -13,6 +13,7 @@ const RegisterForm = () => {
   const [username,setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [registrationNumber, setregistrationNumber] = useState('')
+  const [Surname,setSurname] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [error, setError] = useState([])
@@ -42,6 +43,7 @@ const RegisterForm = () => {
         username,
         email,
         registrationNumber,
+        Surname,
         password,
         confirmPassword
       })
@@ -73,6 +75,9 @@ const RegisterForm = () => {
 
       <input onChange = {(e) => setregistrationNumber(parseInt(e.target.value))}
       value={registrationNumber}type="text" placeholder=" enter the SLMC registeration number" name="number" />
+
+      <input onChange = {(e) => setSurname(parseInt(e.target.value))}
+      value={Surname}type="text" placeholder=" enter the Surname in block capitals." name="number" />
 
       <input onChange = {(e) => setPassword(e.target.value)}
       value={password}type="password" placeholder="enter password" name="password" />
