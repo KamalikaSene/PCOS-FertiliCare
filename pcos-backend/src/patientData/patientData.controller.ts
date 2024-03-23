@@ -14,7 +14,6 @@ export class PatientDataController {
     @Res() res: Response,
   ): Promise<any> {
     try {
-      await this.patientDataService.create(createPatientDataDto);
       await axios.post('http://localhost:5000/predict', createPatientDataDto);
 
       return res
