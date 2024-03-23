@@ -6,140 +6,67 @@ export const metadata = {
   description: "About description",
 };
 
-
-const AboutPage = () => {
-
+const people = [
+  {
+    name: 'Leslie Alexander',
   
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  // More people...
+]
+
+export default function Example() {
   return (
-    <div className={styles.container}>
-      <div className={styles.textContainer}>
-        
-      <div>
-      
-        <p className={styles.desc}>
-        <h1 className={styles.title}>
-        ABOUT US
-        </h1>
-        <div>
-         Established in 2024, PCOSFertiliCare is a pioneering initiative 
+    <div className="bg-white py-24 sm:py-32">
+      <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+        <div className="max-w-2xl">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">About US</h2>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+          Established in 2024, PCOSFertiliCare is a pioneering initiative 
          designed to enhance guidance for medical practitioners dealing with 
          Polycystic Ovary Syndrome (PCOS) and fertility challenges. This platform focuses on 
          predicting infertility likelihood for individuals with PCOS, empowering
          doctors to provide more informed and personalized care.
-         </div>
-         <div >PCOSFertiliCare is a proactive step towards revolutionizing 
+         
+         PCOSFertiliCare is a proactive step towards revolutionizing 
          the approach to PCOS-related fertility challenges, fostering 
-         a collaborative and informed healthcare ecosystem.</div>
-         </p>
-        </div>
+         a collaborative and informed healthcare ecosystem.
 
-        <div className={styles.values}>
-         <h1>Our Values</h1>
-         <div className={styles.teamMember}>
-         <div >
-          <img src="/nursepic.jpg" alt="Image 1" className={styles.image1} />
-          </div>
-          <div className={styles.memberText}>
-            <p><div>Empathizing with PCOS</div> Challenges</p>
-           </div>
-         </div>
-          <div className={styles.teamMember}>
-          <div>
-           <img src="/nursepic.jpg" alt="Image 2" className={styles.image1} />
-          </div>
-           <div className={styles.memberText}>
-            <p><div>Promoting Accesibility</div> for diverse users</p>
-         </div>
-       </div>
-        <div className={styles.teamMember}>
-         <div>
-          <img src="/nursepic.jpg" alt="Image 1" className={styles.image1} />
-          </div>
-          <div className={styles.memberText}>
-            <p><div>Fostering Collaberations between</div> patients and 
-              healthcare professionals
-               </p>
-           </div>
-         </div>
-        </div>
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <h2>Our Values</h2>
+          <ul class="list-disc">
+            <li>Understanding and empathizing with PCOS challenges</li>
+            <li>Promoting accessibility and inclusivity for diverse users</li>
+            <li>Fostering collaboration between patients and healthcare professionals</li>
+          </ul>
+          </p>
+          <p className="mt-6 text-lg leading-8 text-gray-600">
+            <h2>Our Mission</h2>
+            At PCOSFertiliCare, our mission is to guide medical 
+            professionals and individuals with PCOS through fertility challenges. 
+            We're committed to empathy, collaboration, and continuous improvement, aiming to enhance 
+            understanding and improve reproductive well-being. Grounded in innovation, privacy, and accessibility, our goal is to\ empower individuals in navigating their unique fertility
+             journeys with confidence and support
 
-        <div className={styles.mission}>
-          <div>
-          <h1>Our Mission</h1>
-          </div>
-            <div className={styles.paradiv}>
-             <p >
-             At PCOSFertiliCare, our mission is to guide medical professionals 
-             and individuals with PCOS through fertility challenges. 
-             We're committed to empathy, collaboration and continuous improvement,
-              aiming to enhance understanding and improve reproductive well-being. 
-              Grounded in innovation, privacy and accessibility, our goal is to 
-              empower individuals in navigating their unique fertility journeys 
-              with confidence and support.
-             </p>
-          </div>
+          </p>
+         
         </div>
-        <div className={styles.mission}>
-            <div className={styles.paradiv}>
-             <p >
-             PCOSFertiliCare envisions a future where individuals diagnosed with 
-             Polycystic Ovary Syndrome (PCOS) experience empowered and informed 
-             reproductive health journeys. We aspire to be a global leader in revolutionizing 
-             PCOS-related fertility care, fostering a community where personalized guidance and 
-             understanding converge to optimize fertility outcomes.
-             </p>
-          </div>
-          <div>
-          <h1>Our Vision</h1>
-          </div>
-        </div>
-        
-        <div className={styles.ourteam}>
-         <h1>Meet our Team</h1>
-         <div className={styles.teamMember}>
-         <div>
-          <img src="/nursepic.jpg" alt="Image 1" className={styles.image2} />
-          </div>
-          <div className={styles.memberText}>
-            <p>Kamalika</p>
-           </div>
-         </div>
-          <div className={styles.teamMember}>
-          <div>
-           <img src="/nursepic.jpg" alt="Image 2" className={styles.image2} />
-          </div>
-           <div className={styles.memberText}>
-            <p>Ranuga</p>
-         </div>
-       </div>
-        <div className={styles.teamMember}>
-         <div>
-          <img src="/nursepic.jpg" alt="Image 1" className={styles.image2} />
-          </div>
-          <div className={styles.memberText}>
-            <p>Isiri</p>
-           </div>
-         </div>
-          <div className={styles.teamMember}>
-          <div>
-           <img src="/nursepic.jpg" alt="Image 2" className={styles.image2} />
-          </div>
-           <div className={styles.memberText}>
-            <p>Amaa</p>
-         </div>
-        </div>
-        <div className={styles.teamMember}>
-          <div>
-           <img src="/nursepic.jpg" alt="Image 2" className={styles.image2} />
-          </div>
-           <div className={styles.memberText}>
-            <p>Thevindu</p>
-         </div>
-        </div>
-       </div>
+        <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+          {people.map((person) => (
+            <li key={person.name}>
+              <div className="flex items-center gap-x-6">
+                <img className="h-16 w-16 rounded-full" src={person.imageUrl} alt="" />
+                <div>
+                  <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name}</h3>
+                  
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
-  );
-};
-
-export default AboutPage;
+  )
+}
