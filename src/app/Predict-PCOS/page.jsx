@@ -1,13 +1,11 @@
 import QueryForm from "@/app/Predict-PCOS/QueryForm";
 
 export const metadata = {
-  title: "Predict-Page",
+  title: "Infertility Risk Prediction",
   
 };
 
-
 const Predict = () => {
-
   
   return (
     <div>
@@ -18,13 +16,3 @@ const Predict = () => {
 };
 
 export default Predict;
-
-// const Predict = () => {
-
-  
-//   return (
-//     <div>hiii</div>
-//   );
-// };
-
-// export default Predict;
