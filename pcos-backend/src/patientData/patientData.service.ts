@@ -17,8 +17,4 @@ export class PatientDataService {
     const createdPatientData = new this.PatientDataModel(createPatientDataDto);
     return createdPatientData.save();
   }
-
-  async findOne(id: string): Promise<PatientData | null> {
-    return this.PatientDataModel.findById(id).exec();
-  }
 }
