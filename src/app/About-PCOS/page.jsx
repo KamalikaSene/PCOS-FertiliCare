@@ -3,106 +3,83 @@ import styles from "./Aboutpcos.module.css";
 
 const AboutPage = () => {
   return (
-    <div className="bg-green-200"> {/* Change bg-gray-100 to your desired background color */}
-      <div className={styles.container}>
-        <div className={styles.textContainer}>
-          <h1 className={styles.title} >
-            Learn More About PCOS
-          </h1>
-          <div className="bg-blue-200 p-6 rounded-lg shadow-lg text-center ml-5">
-            <p className="text-lg">
-              PCOS or Polycystic Ovary Syndrome, is a prevalent hormonal condition affecting 
-              women in their late teens or early twenties. 
-              It is characterized by hyperandrogenism (elevated male hormones causing ovarian cysts), 
-              anovulation (irregular or absent ovulation), and the presence 
-              of multiple fluid-filled sacs on the ovaries.
+    
+    <div class="container my-24 mx-auto md:px-6">
+
+  <section class="mb-32">
+    <div class="flex flex-wrap">
+      <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
+        <div class="flex lg:py-12">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/people/058.jpg"
+            class="z-[10] w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]" alt="image" />
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
+        <div
+          class="flex h-full items-center rounded-lg bg-yellow-600 p-6 text-center text-white lg:pl-12 lg:text-left">
+          <div class="lg:pl-12">
+            <h2 class="mb-8 text-3xl font-bold">Learn More About PCOS</h2>
+            <p class="mb-8 pb-2 lg:pb-0">
+            PCOS or Polycystic Ovary Syndrome, is a prevalent hormonal condition affecting
+             women in their late teens or early twenties. 
+              It is characterized by hyperandrogenism 
+              (elevated male hormones causing ovarian cysts), anovulation 
+              (irregular or absent ovulation), and the presence of multiple 
+              fluid-filled sacs on the ovaries.
+            </p>
+
+            <div class="mx-auto mb-8 flex flex-col md:flex-row md:justify-around xl:justify-start">
+              <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="mr-2 h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Best team
+              </p>
+
+              <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0 xl:mr-20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="mr-2 h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Best quality
+              </p>
+
+              <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" class="mr-2 h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Best experience
+              </p>
+            </div>
+
+            <p>
+              Duis sagittis, turpis in ullamcorper venenatis, ligula nibh
+              porta dui, sit amet rutrum enim massa in ante. Curabitur in
+              justo at lorem laoreet ultricies. Nunc ligula felis, sagittis
+              eget nisi vitae, sodales vestibulum purus. Vestibulum nibh
+              ipsum, rhoncus vel sagittis nec, placerat vel justo. Duis
+              faucibus sapien eget tortor finibus, a eleifend lectus dictum.
+              Cras tempor convallis magna id rhoncus. Suspendisse potenti.
+              Nam mattis faucibus imperdiet. Proin tempor lorem at neque
+              tempus aliquet. Phasellus at ex volutpat, varius arcu id,
+              aliquam lectus. Vestibulum mattis felis quis ex pharetra
+              luctus. Etiam luctus sagittis massa, sed iaculis est vehicula
+              ut.
             </p>
           </div>
-           
-          <div className="bg-purple-200 p-6 rounded-lg shadow-lg text-center ml-5">
-            <h2 className="text-2xl font-bold text-blue-500">Types of PCOS</h2>
-            <ol className="list-decimal list-inside">
-              <li className="py-2 border-b border-gray-200">Insulin-resistant PCOS - Elevated insulin levels.</li>
-              <li className="py-2 border-b border-gray-200">Inflammatory PCOS - Chronic inflammation exacerbating symptoms.</li>
-              <li className="py-2 border-b border-gray-200">Hidden-cause PCOS - Triggered by stress, environment, or genetics.</li>
-              <li className="py-2 border-b border-gray-200">Pill-induced PCOS - Resulting from progestin in birth control pills, disrupting hormone balance.</li>
-            </ol>
-          </div>
-
-
-          <div className="bg-pink-200 p-6 rounded-lg shadow-lg flex flex-col items-center ml-5">
-            <h2 className="text-2xl font-bold mb-4">PCOS Statistics</h2>
-            <div className="flex justify-around">
-              <div className="text-center">
-                <p className="text-lg font-bold">1 in 12 individuals</p>
-              </div>
-              <div className="text-center">
-                <p className="text-lg font-bold">4-8% individuals of childbearing age globally</p>
-              </div>
-              <div className="text-center">
-                <p className="text-lg font-bold">31.3% Asian individuals</p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-purple-200 p-6 rounded-lg shadow-lg text-center ml-5">
-            <h2 className="text-2xl font-bold mb-4">What Causes PCOS</h2>
-            <p className="mb-4">PCOS can result from elevated androgen levels, leading to the accumulation of abdominal and visceral fat, fostering insulin resistance and amplifying androgen production, fueling the progression of PCOS and its symptoms.</p>
-
-            <h2 className="text-2xl font-bold mb-4">Challenges Faced by Individuals with PCOS</h2>
-            <ul className="list-none text-center">
-              <li className="my-2">Infertility</li>
-              <li className="my-2">Obesity</li>
-              <li className="my-2">Type 2 diabetes</li>
-              <li className="my-2">Cardiovascular diseases</li>
-              <li className="my-2">Miscarriages</li>
-              <li className="my-2">Breast cancer</li>
-              <li className="my-2">Anxiety</li>
-              <li className="my-2">Eating disorders</li>
-            </ul>
-          </div>
-          <div className="bg-blue-200 p-6 rounded-lg shadow-lg text-center ml-5">
-            <h2 className="text-2xl font-bold mb-4">In-depth Exploration of PCOS Impact on Fertility</h2>
-            <p className="mb-4">PCOS, identified by the World Health Organization as a primary cause of anovulation, significantly contributes to infertility, affecting 70-80% of women with anovulatory infertility.</p>
-            <p className="mb-4">The intricate nature of PCOS, marked by challenges in diagnosis, particularly highlights infertility as a distinctive complication linked to ovarian development.</p>
-            <p className="mb-4">In a normal ovary, the follicle cycle completes, but in polycystic ovaries, follicle development halts, resulting in multiple immature follicles and contributing to infertility. Hormonal imbalances in PCOS disrupt regular ovulation, causing irregular menstruation, anovulation, and lower-quality eggs, hindering conception.</p>
-            <p>PCOS-related disorders like insulin resistance and androgen excess further exacerbate infertility issues in affected individuals globally.</p>
-          </div>
-          <div className="bg-purple-200 p-6 rounded-lg shadow-lg text-center ml-5">
-            <h2 className="text-2xl font-bold mb-4">Statistical Information on PCOS and Fertility</h2>
-            <div className="flex justify-around">
-            <div className="flex justify-around">
-            <div className="mx-4 text-white">
-                <p className="text-lg ">7 out of 10 individuals with PCOS are affected by anovulatory infertility</p>
-              </div>
-              <div className="mx-4 text-white">
-                <p className="text-lg ">4.5 times higher likelihood of infertility in women with PCOS</p>
-              </div>
-              <div className="mx-4 text-white">
-                <p className="text-lg ">70% of cases among 25% of couples experiencing fertility challenges are due to PCOS</p>
-              </div>
-            </div>
-            </div>
-          </div>
-          <div className="bg-orange-200 p-6 rounded-lg shadow-lg text-center ml-5">
-            <h2 className="text-2xl font-bold mb-4">The Importance of Early Diagnosis</h2>
-            <p className="mb-4">Pre-treatment risk assessment is vital to prevent negative outcomes and recognizing the higher risk allows for implementing preventive measures to mitigate potential severe outcomes such as spontaneous abortion, risk of miscarriage, etc.</p>
-            <p className="mb-4">Thus, analyzing and understanding a PCOS patient's risk of becoming infertile would directly impact the individual’s fertility and reproductive health with relation to PCOS.</p>
-            <p>Therefore, communicating the risk regarding these possible effects and where appropriate, prevention methods and treatment, should dominate the conversation between the clinician and the patient.</p>
-          </div>
-
-
-  
-        </div>
-        <div className={styles.imgContainer}>
-          <Image
-            src="/Aboutpcos2.jpeg"
-            alt="About Image"
-            fill
-            className={styles.img}
-          />
         </div>
       </div>
     </div>
+  </section>
+
+</div>
+
   );
 };
 
