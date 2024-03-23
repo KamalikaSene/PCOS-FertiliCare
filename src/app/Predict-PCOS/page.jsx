@@ -20,20 +20,21 @@ const QueryForm = () => {
     setIsSubmitting(true);
     try {
       const cycle_value = cycle === 'Regular' ? '2' : '4';
-      const response = await fetch('http://localhost:4000/api/patientData', {
+      await fetch('http://localhost:4000/api/patientData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ bmi, cycle_value, fsh_lh, prl_ng_ml }),
       });
-      if (!response.ok) {
-        throw new Error(`Error sending data to backend: ${response.statusText}`);
-      }
+      // if (!response.ok) {
+      //   throw new Error(`Error sending data to backend: ${response.statusText}`);
+      // }
       // Simulate a 5-second delay before fetching prediction
-      setTimeout(() => {
-        fetchData();
-      }, 5000);
+      // setTimeout(() => {
+      //   fetchData();
+      // }, 5000);
+      fetchData();
     } catch (error) {
       setIsSubmitting(false);
     }
