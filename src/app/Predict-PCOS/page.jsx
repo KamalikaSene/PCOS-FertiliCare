@@ -43,9 +43,9 @@ const QueryForm = () => {
     setIsLoading(true);
     try {
       const response = await fetch('http://localhost:4000/api/viewresult');
-      if (!response.ok) {
-        throw new Error(`Error fetching last record: ${response.statusText}`);
-      }
+      // if (!response.ok) {
+      //   throw new Error(`Error fetching last record: ${response.statusText}`);
+      // }
       const data = await response.json();
       setPredictionText(data.risk_level || '');
       setIsPredictionFetched(true);
