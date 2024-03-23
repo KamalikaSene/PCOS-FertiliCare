@@ -1,70 +1,59 @@
-// pages/ResultPage.js
+"use client"
+import React, { useState } from 'react';
 
 const ResultPage = () => {
-    return (
-   
-      
-      <div class="container my-24 mx-auto md:px-6">
-       
-        <section class="mb-32">
-      
-          <div class="container mx-auto text-center lg:text-left xl:px-32">
-            <div class="flex grid items-center lg:grid-cols-2">
-              <div class="mb-12 lg:mb-0">
-                <div
-                  class="relative z-[1] block rounded-lg bg-green-200 px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] backdrop-blur-[30px] dark:bg-[hsla(0,0%,5%,0.55)] dark:shadow-black/20 md:px-12 lg:-mr-14">
-                  <h2 class="mb-8 text-3xl font-bold">Prediction Result</h2>
-                  <h3 class="mb-8 text-2xl font-bold">Prediction Number: </h3>
-                  <p class="mb-8 pb-2 text-neutral-500 dark:text-neutral-300 lg:pb-0">
-                    PREDICTION LEVEL RESULT 
-                  </p>
-      
-                  <div class="mx-auto mb-8 flex flex-col md:flex-row md:justify-around lg:justify-between">
-                    {/* <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="currentColor" class="mr-2 h-5 w-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      Best team
-                    </p> */}
-      
-                    {/* <p class="mx-auto mb-4 flex items-center md:mx-0 md:mb-2 lg:mb-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="currentColor" class="mr-2 h-5 w-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      Best quality
-                    </p> */}
-      
-                    {/* <p class="mx-auto mb-2 flex items-center md:mx-0 lg:mb-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                        stroke="currentColor" class="mr-2 h-5 w-5">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      Best experience
-                    </p> */}
-                  </div>
-      
-            
-                </div>
-              </div>
-      
-              <div>
-                <img src="/PCOSResult.jpg"
-                  class="w-64 rounded-lg shadow-lg dark:shadow-black/20" alt="image" />
-              </div>
-   
-            </div>
-          </div>
-          
-        </section>
-    
-      </div>
-    
-    );
+  const [recordId, setRecordId] = useState("");
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:3000/api/${recordId}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      setResult(data.risk_level);
+    } catch (error) {
+      setError(error.message);
+    }
   };
-  
-  export default ResultPage;
+
+  const handleChange = (event) => {
+    setRecordId(event.target.value);
+  };
+
+  return (
+    <div className="bg-pink-100 p-6 rounded-lg w-80 mx-auto mt-10 mb-10">
+      <h3 className="text-center">Enter Result ID To View Past Prediction Result</h3>
+      <form className="mt-4 mb-4" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Record ID"
+          className="w-full px-4 py-2 mb-4 rounded-md border border-gray-300"
+          value={recordId}
+          onChange={handleChange}
+        />
+        <button
+          type="submit"
+          className="w-full px-4 py-2 rounded-md bg-pink-500 text-white hover:bg-pink-600 transition duration-300 ease-in-out"
+        >
+          Submit
+        </button>
+      </form>
+      {result && (
+        <div className="text-center text-green-700">
+          Prediction Result: {result}
+        </div>
+      )}
+      {error && (
+        <div className="text-center text-red-700">
+          Error: {error}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default ResultPage;
