@@ -25,7 +25,7 @@ export default function Home() {
       </Link>
     
 
-      <Link href="/SLMC-doctor-auth" className={styles.leftBottomContainer}>
+      <Link href="/SLMC-doctor-auth\" className={styles.leftBottomContainer}>
         <img src="/predictpcos1.jpeg" alt="Image 1" />
         <div>
           {/* Content for the left container */}
