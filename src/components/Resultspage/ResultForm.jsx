@@ -26,11 +26,11 @@ const ResultPage = () => {
 
   return (
     <div className="bg-pink-100 p-6 rounded-lg w-80 mx-auto mt-10 mb-10">
-      <h3 className="text-center">Enter Result ID To View Past Prediction Result</h3>
+      <h3 className="text-center">Enter Result ID of the saved Result</h3>
       <form className="mt-4 mb-4" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Record ID"
+          placeholder="Result ID"
           className="w-full px-4 py-2 mb-4 rounded-md border border-gray-300"
           value={recordId}
           onChange={handleChange}
