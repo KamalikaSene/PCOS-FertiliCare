@@ -30,7 +30,7 @@ export default function Home() {
             
             </div>
             
-            <p class="text-neutral-500 dark:text-neutral-300">
+            <p class="text-green-500">
               Get to know more abut PCOS 
             </p>
             <div className="mb-4"></div>
@@ -63,7 +63,7 @@ export default function Home() {
               
             </div>
             
-            <p class="text-neutral-500 dark:text-neutral-300">
+            <p class="text-green-500">
               Predict the risk level of being Infertile <div></div><div>(Authorised for medical Personall only)</div>
             </p>
             <div className="mb-4"></div>
@@ -93,7 +93,7 @@ export default function Home() {
             <div class="mb-3 flex items-center justify-center text-sm font-medium text-yellow-600 md:justify-start">  
             </div>
             
-            <p class="text-neutral-500 dark:text-neutral-300">
+            <p class="text-green-500">
             Here you can view the past result predicted using the patient id given by us.
             </p>
             <div className="mb-4"></div>
@@ -124,7 +124,7 @@ export default function Home() {
                   class="mb-3 flex items-center justify-center text-sm font-medium text-primary dark:text-primary-400 md:justify-start">
                   
                 </div>
-                <p class="text-neutral-500 dark:text-neutral-300">
+                <p class="text-green-500">
                 Learn about us, instructions on how to use the Web-App
                 </p>
                 <div className="mb-4"></div>
