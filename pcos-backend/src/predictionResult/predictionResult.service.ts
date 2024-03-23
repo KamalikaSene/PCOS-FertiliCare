@@ -23,4 +23,19 @@ export class PredictionResultService {
   async findAll(): Promise<PredictionResult[]> {
     return this.PredictionResultModel.find().exec();
   }
+
+  async findLast(): Promise<PredictionResult | null> {
+    return this.PredictionResultModel.findOne().sort({ _id: -1 }); // Get the document with the highest ID (latest)
+  }
+
+  async findOne(id: string): Promise<PredictionResult | null> {
+    return this.PredictionResultModel.findById(id).exec();
+  }
+
+  async deleteLastRecord(): Promise<PredictionResult | null> {
+    return await this.PredictionResultModel.findOneAndDelete(
+      {},
+      { sort: { _id: -1 } },
+    );
+  }
 }
