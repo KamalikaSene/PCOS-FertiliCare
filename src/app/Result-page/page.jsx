@@ -9,7 +9,7 @@ const ResultPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/api/${recordId}`);
+      const response = await fetch(`http://localhost:4000/api/${recordId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

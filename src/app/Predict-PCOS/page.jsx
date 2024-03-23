@@ -20,7 +20,7 @@ const QueryForm = () => {
     setIsSubmitting(true);
     try {
       const cycle_value = cycle === 'Regular' ? '2' : '4';
-      const response = await fetch('http://localhost:3000/api/patientData', {
+      const response = await fetch('http://localhost:4000/api/patientData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,7 +42,7 @@ const QueryForm = () => {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3000/api/viewresult');
+      const response = await fetch('http://localhost:4000/api/viewresult');
       if (!response.ok) {
         throw new Error(`Error fetching last record: ${response.statusText}`);
       }
@@ -67,7 +67,7 @@ const QueryForm = () => {
 
   const handleDeleteResult = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/deleteresult', {
+      const response = await fetch('http://localhost:4000/api/deleteresult', {
         method: 'POST'
       });
 
