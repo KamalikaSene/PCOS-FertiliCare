@@ -44,7 +44,7 @@ export class PredictionResultController {
     }
   }
 
-  @Get('viewresult')
+  @Post('viewresult')
   async getLastRecord(@Res() res: Response): Promise<any> {
     try {
       const lastRecord = await this.predictionResultService.findLast();
