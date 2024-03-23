@@ -27,14 +27,8 @@ const QueryForm = () => {
         },
         body: JSON.stringify({ bmi, cycle_value, fsh_lh, prl_ng_ml }),
       });
-      // if (!response.ok) {
-      //   throw new Error(`Error sending data to backend: ${response.statusText}`);
-      // }
-      // Simulate a 5-second delay before fetching prediction
-      // setTimeout(() => {
-      //   fetchData();
-      // }, 5000);
       fetchData();
+      setIsSubmitting(false);
     } catch (error) {
       setIsSubmitting(false);
     }
@@ -88,7 +82,7 @@ const QueryForm = () => {
 return (
   <div className="login">
    <h1 className="text-2xl font-bold mb-4 text-center mt-10">Infertility Risk Prediction</h1>
-   <div className="login bg-pink-200 mx-60 rounded-lg p-8">
+   <div className="login bg-pink-200 mx-20 rounded-lg p-8">
   <form onSubmit={handleSubmit} className="flex flex-col space-y-6">
     <div className="flex items-center justify-center">
       <h4 className="mr-4">Enter BMI</h4>
@@ -133,9 +127,9 @@ return (
     
         {isPredictionFetched && (
           <>
-            <div className="bg-green-200 p-8 mt-8 mb-8">
+            <div className="bg-green-200 p-8 mt-8 mb-8 mx-20">
               <div className="bg-green-100 p-8 mt-2 mb-7">
-                <p className="pt-2 pb-6 text-center">Prediction Made Successfully..</p>
+                <p className="pt-2 pb-6 text-center font-semibold">Prediction Made Successfully..</p>
                 <p className="text-xl text-center text-pink-700"> {/* Make the text bigger */}
                   Your Predicted Infertility Risk Level Is
                 </p>
@@ -143,8 +137,8 @@ return (
                   {predictionText} Risk!
                 </p>
               </div>
-              <div className="bg-pink-100 p-8 mt-2 mb-7">
-                <p className="pt-2 text-center">Please Select What You Would Like To Do Next!</p>
+              <div className="bg-pink-100 p-8 mt-2 mb-7 rounded-md">
+                <p className="pt-2 text-center font-semibold">Please Select What You Would Like To Do Next!</p>
                 <div className="mt-4">
                   <div className= "px-4 py-2 flex justify-center">
                     <button
