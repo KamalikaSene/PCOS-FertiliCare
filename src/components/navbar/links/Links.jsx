@@ -12,11 +12,6 @@ const links = [
     path: "/",
   },
   {
-    title: "About",
-    path: "/about",
-  },
-
-  {
     title: "Pricing",
     path: "/dd",
   },
@@ -28,6 +23,10 @@ const links = [
   {
     title: "FAQ",
     path: "/FAQ",
+  },
+  {
+    title: "About-us",
+    path: "/about",
   },
 ];
 
