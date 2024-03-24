@@ -27,7 +27,7 @@ const Team = () => {
             imageSrc="/kamalika.jpeg"
           />
           <TeamCard
-            name="Ranuga Olitha "
+            name="Ranuga Anthony "
             profession="2nd Year Undergraduate"
             imageSrc="/Ranuga.jpeg"
           />
