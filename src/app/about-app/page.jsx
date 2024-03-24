@@ -9,7 +9,7 @@ const InstructionsPage = () => {
             <div className="max-w-3xl mx-auto">
                 <div className="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
                     <div className="bg-white relative top-0 -mt-32 p-5 sm:p-10">
-                        <h1 href="#" className="text-gray-900 font-bold text-3xl mb-2">What is PCOS-FERTILICARE</h1>
+                        <h1 href="#" className="text-gray-900 font-bold text-3xl mb-2">What is PCOS-FertiliCare?</h1>
                         <p className="text-gray-700 text-xs mt-2">
                         </p>
 

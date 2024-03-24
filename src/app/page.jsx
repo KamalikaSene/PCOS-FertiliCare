@@ -126,7 +126,7 @@ export default function Home() {
         
               <div class="md:order-1">
               <div className="bg-opacity-80 bg-white p-4 rounded-lg">
-                <h3 class="mb-3 text-2xl font-bold">What is PCOS fertilicare</h3>
+                <h3 class="mb-3 text-2xl font-bold">What is PCOS-FertiliCare</h3>
                 <div
                   class="mb-3 flex items-center justify-center text-sm font-medium text-primary dark:text-primary-400 md:justify-start">
                   
