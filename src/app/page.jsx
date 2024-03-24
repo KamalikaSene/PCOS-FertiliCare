@@ -4,7 +4,7 @@ import Link from 'next/link'; // Import Link from next/link
 export default function Home() {
   return (
     
-    <div class="container my-24 mx-auto md:px-6">
+    <div class="container my-24 mx-auto md:px-6" style={{backgroundImage: "url('/backGround.jpg')"}} >
       
       <section class="mb-32 text-center md:text-left">
         
@@ -23,6 +23,7 @@ export default function Home() {
           </div>
     
           <div>
+          <div className="bg-opacity-80 bg-white p-4 rounded-lg">
             <h3 class="mb-3 text-2xl font-bold">About PCOS</h3>
             <div
               class="mb-3 flex items-center justify-center text-sm font-medium text-danger dark:text-danger-500 md:justify-start">
@@ -40,6 +41,7 @@ export default function Home() {
               </button>
             </Link>
           </div>
+          </div>
         </div>
     
         <div class="mb-12 grid items-center gap-x-6 md:grid-cols-2 xl:gap-x-12">
@@ -56,6 +58,7 @@ export default function Home() {
           </div>
     
           <div class="md:order-1">
+          <div className="bg-opacity-80 bg-white p-4 rounded-lg">
             <h3 class="mb-3 text-2xl font-bold">Predict Infertility Risk Level</h3>
             <div
               class="mb-3 flex items-center justify-center text-sm font-medium text-primary dark:text-primary-400 md:justify-start">
@@ -73,6 +76,7 @@ export default function Home() {
               </button>
             </Link>
           </div>
+          </div>
         </div>
     
         <div class="mb-12 grid items-center gap-x-6 md:grid-cols-2 xl:gap-x-12">
@@ -89,6 +93,7 @@ export default function Home() {
           </div>
     
           <div>
+          <div className="bg-opacity-80 bg-white p-4 rounded-lg">
             <h3 class="mb-3 text-2xl font-bold">View Past Results</h3>
             <div class="mb-3 flex items-center justify-center text-sm font-medium text-yellow-600 md:justify-start">  
             </div>
@@ -102,6 +107,7 @@ export default function Home() {
                 Click here
               </button>
             </Link>
+          </div>
           </div>
         </div>
 
@@ -119,6 +125,7 @@ export default function Home() {
               </div>
         
               <div class="md:order-1">
+              <div className="bg-opacity-80 bg-white p-4 rounded-lg">
                 <h3 class="mb-3 text-2xl font-bold">What is PCOS fertilicare</h3>
                 <div
                   class="mb-3 flex items-center justify-center text-sm font-medium text-primary dark:text-primary-400 md:justify-start">
@@ -133,6 +140,7 @@ export default function Home() {
                     Click here
                   </button>
             </Link>
+              </div>
               </div>
         </div>
         

@@ -7,7 +7,7 @@ const LoginPage = () => {
 
   return (
      
-    <div class="container my-24 mx-auto md:px-6 bg-green-200">
+    <div class="container my-24 mx-auto md:px-6 bg-green-200" style={{backgroundImage: "url('/BG4.jpg')"}}>
       
       <section class="mb-32">
         
