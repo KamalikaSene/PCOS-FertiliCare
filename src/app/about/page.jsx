@@ -1,22 +1,81 @@
+// import React from "react";
+
+// const Team = () => {
+//   return (
+//     <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
+//       <div className="container mx-auto">
+//         <div className="-mx-4 flex flex-wrap">
+//           <div className="w-full px-4">
+//             <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+//               <span className="mb-2 block text-lg font-semibold text-primary">
+                
+//               </span>
+//               <h2 className="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
+//                 Meet Our Awesome Team
+//               </h2>
+//               <p className="text-base text-body-color dark:text-dark-6">
+                
+//               </p>
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="-mx-4 flex flex-wrap justify-center">
+//           <TeamCard
+//             name="Kamalika Senevirathne"
+//             profession="2nd Year Undergraduate/Team Leader"
+//             imageSrc="/kamalika.jpeg"
+//           />
+//           <TeamCard
+//             name="Ranuga Olitha "
+//             profession="2nd Year Undergraduate"
+//             imageSrc="/Ranuga.jpeg"
+//           />
+//           <TeamCard
+//             name="Amaa Samarasekara"
+//             profession="2nd Year Undergraduate"
+//             imageSrc="/amaa.jpeg"
+//           />
+//           <TeamCard
+//             name="Isiri Lankadhikara"
+//             profession="2nd Year Undergraduate"
+//             imageSrc="https://i.ibb.co/yVVT0Dp/image-02-2.jpg"
+//           />
+//            <TeamCard
+//             name="Thevindu Jayawardena"
+//             profession="2nd Year Undergraduate"
+//             imageSrc="/thevindu.JPG"
+//           />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Team;
+
+
 import React from "react";
 
 const Team = () => {
   return (
-    <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
-      <div className="container mx-auto">
+    <section className="pb-10 pt-10 dark:bg-dark lg:pb-20 lg:pt-[120px]">
+      {/* <div className="container mx-auto"> */}
+      <div className="container mx-auto" style={{backgroundImage: "url('./contactus.webp')"}}>
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
-            <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-              <span className="mb-2 block text-lg font-semibold text-primary">
-                
-              </span>
-              <h2 className="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
-                Meet Our Awesome Team
-              </h2>
-              <p className="text-base text-body-color dark:text-dark-6">
-                
+            {/* <div className="mx-auto mb-[30px] max-w-[510px] text-center">
+              <p className="text-base text-body-color dark:text-dark-6 text-justify">
+                Established in 2024, PCOSFertiliCare is a pioneering initiative designed to enhance guidance for medical practitioners dealing with Polycystic Ovary Syndrome (PCOS) and fertility challenges. This platform focuses on predicting infertility likelihood for individuals with PCOS, empowering doctors to provide more informed and personalized care. PCOSFertiliCare is a proactive step towards revolutionizing the approach to PCOS-related fertility challenges, fostering a collaborative and informed healthcare ecosystem.
+              </p>
+            </div> */}
+
+            <div className="mx-auto mb-[30px] max-w-[510px] text-center">
+              <p className="text-base font-bold text-body-color dark:text-dark-6 text-center">
+                Established in 2024, PCOSFertiliCare is a pioneering initiative designed to enhance guidance for medical practitioners dealing with Polycystic Ovary Syndrome (PCOS) and fertility challenges. This platform focuses on predicting infertility likelihood for individuals with PCOS, empowering doctors to provide more informed and personalized care. PCOSFertiliCare is a proactive step towards revolutionizing the approach to PCOS-related fertility challenges, fostering a collaborative and informed healthcare ecosystem.
               </p>
             </div>
+            
           </div>
         </div>
 
@@ -53,6 +112,9 @@ const Team = () => {
 };
 
 export default Team;
+
+
+
 
 const TeamCard = ({ imageSrc, name, profession }) => {
   return (
