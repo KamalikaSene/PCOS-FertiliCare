@@ -45,8 +45,10 @@ const ResultPage = () => {
         </button>
       </form>
       {result && (
-        <div className="text-center text-green-700">
-          Your Past Prediction Result : {result}
+        <div class="bg-pink-200 shadow-md rounded-lg p-4 text-center">
+        <span class="text-grey-700 font-medium">Your Past Prediction Result:</span>
+        <br></br> 
+        <span class="text-pink-700 font-bold text-xl">{result}</span>
         </div>
       )}
       {error && (
