@@ -51,10 +51,9 @@ export class PredictionResultController {
       if (!lastRecord) {
         throw new NotFoundException('No records found');
       }
-      // return res.status(HttpStatus.OK).json(lastRecord);
       return res
         .status(HttpStatus.OK)
-        .json({ risk_level: lastRecord.risk_level });
+        .json({ risk_level: lastRecord.risk_level, record_id: lastRecord._id });
     } catch (error) {
       if (error instanceof NotFoundException) {
         return res

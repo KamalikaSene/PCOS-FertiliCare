@@ -25,7 +25,7 @@ export class PredictionResultService {
   }
 
   async findLast(): Promise<PredictionResult | null> {
-    return this.PredictionResultModel.findOne().sort({ _id: -1 }); // Get the document with the highest ID (latest)
+    return this.PredictionResultModel.findOne().sort({ _id: -1 });
   }
 
   async findOne(id: string): Promise<PredictionResult | null> {

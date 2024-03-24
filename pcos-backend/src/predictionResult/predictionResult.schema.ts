@@ -7,6 +7,7 @@ export type PredictionResultDocument = HydratedDocument<PredictionResult>;
 export class PredictionResult {
   @Prop()
   risk_level: string;
+  _id: any;
 }
 
 export const PredictionResultSchema =
