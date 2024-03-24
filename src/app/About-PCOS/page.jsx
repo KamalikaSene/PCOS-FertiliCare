@@ -12,7 +12,7 @@ const AboutPage = () => {
     
     <div className={`${styles.container} container my-24 mx-auto md:px-6`}>
 
-  <section class="mb-32">
+  <section class="mb-32" style={{backgroundImage: "url('/women.jpg')"}}>
     <div class="flex flex-wrap">
       <div class="mb-12 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-5/12">
         <div class="flex lg:py-12">
