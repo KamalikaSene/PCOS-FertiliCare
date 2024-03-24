@@ -11,11 +11,13 @@ const ResultPage = () => {
     try {
       const response = await fetch(`http://localhost:4000/api/${recordId}`);
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error('Error. Please enter a valid ID.');
       }
       const data = await response.json();
+      setError(null);
       setResult(data.risk_level);
     } catch (error) {
+      setResult(null);
       setError(error.message);
     }
   };
@@ -26,7 +28,7 @@ const ResultPage = () => {
 
   return (
     <div className="bg-pink-100 p-6 rounded-lg w-80 mx-auto mt-10 mb-10">
-      <h3 className="text-center">Enter Result ID of the saved Result</h3>
+      <h3 className="text-center">Enter Result ID of the Saved Result</h3>
       <form className="mt-4 mb-4" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -44,12 +46,12 @@ const ResultPage = () => {
       </form>
       {result && (
         <div className="text-center text-green-700">
-          Prediction Result: {result}
+          Your Past Prediction Result : {result}
         </div>
       )}
       {error && (
         <div className="text-center text-red-700">
-          Error: {error}
+          {error}
         </div>
       )}
     </div>

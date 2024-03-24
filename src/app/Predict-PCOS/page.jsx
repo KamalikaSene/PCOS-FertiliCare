@@ -8,7 +8,7 @@ const QueryForm = () => {
   const [fsh_lh, setFSHLH] = useState('');
   const [prl_ng_ml, setPRL] = useState('');
   const [predictionText, setPredictionText] = useState('');
-  // const [recordId, setRecordId] = useState(null);
+  const [record_id, setRecordId] = useState(null);
   const [isDeleteSuccess, setIsDeleteSuccess] = useState(false);
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,13 +38,11 @@ const QueryForm = () => {
     setIsLoading(true);
     try {
       const response = await fetch('http://localhost:4000/api/viewresult');
-      // if (!response.ok) {
-      //   throw new Error(`Error fetching last record: ${response.statusText}`);
-      // }
+
       const data = await response.json();
       setPredictionText(data.risk_level || '');
+      setRecordId(data.record_id || null);
       setIsPredictionFetched(true);
-      // setRecordId(data.recordId || null);
 
     } catch (error) {
       setError(error.message);
@@ -130,11 +128,14 @@ return (
             <div className="bg-green-200 p-8 mt-8 mb-8 mx-20">
               <div className="bg-green-100 p-8 mt-2 mb-7">
                 <p className="pt-2 pb-6 text-center font-semibold">Prediction Made Successfully..</p>
-                <p className="text-xl text-center text-pink-700"> {/* Make the text bigger */}
+                <p className="text-xl text-center text-pink-700"> 
                   Your Predicted Infertility Risk Level Is
                 </p>
-                <p className="text-3xl font-bold text-center text-pink-600 mb-1 mt-3"> {/* Make predictionText even bigger */}
+                <p className="text-3xl font-bold text-center text-pink-600 mb-1 mt-3">
                   {predictionText} Risk!
+                </p>
+                <p className="text-2xl font-semibold text-center text-pink-600 mb-1 mt-3">
+                  Your Result ID is {record_id}
                 </p>
               </div>
               <div className="bg-pink-100 p-8 mt-2 mb-7 rounded-md">
