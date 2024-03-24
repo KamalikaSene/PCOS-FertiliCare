@@ -28,9 +28,9 @@ def predict():
     prediction_str = str(prediction[0])
 
     if prediction == 6:
-        risk_level = "Medium"
-    elif prediction == 4:
         risk_level = "High"
+    elif prediction == 4:
+        risk_level = "Medium"
     elif prediction == 2:
         risk_level = "Low"
     else:
