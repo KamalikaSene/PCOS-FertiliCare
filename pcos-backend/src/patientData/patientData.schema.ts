@@ -16,7 +16,6 @@ export class PatientData {
 
   @Prop()
   cycle_value: number;
-  //_id: any;
 }
 
 export const PatientDataSchema = SchemaFactory.createForClass(PatientData);
