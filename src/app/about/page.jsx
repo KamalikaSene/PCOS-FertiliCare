@@ -98,7 +98,7 @@ const Team = () => {
           <TeamCard
             name="Isiri Lankadhikara"
             profession="2nd Year Undergraduate"
-            imageSrc="https://i.ibb.co/yVVT0Dp/image-02-2.jpg"
+            imageSrc="/isiri.jpeg"
           />
            <TeamCard
             name="Thevindu Jayawardena"
