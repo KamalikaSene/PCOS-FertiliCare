@@ -1,0 +1,79 @@
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  high
+CYCLE:  high
+FSH/LH:  low
+PROLACTIN:  low
+Cumulative risk score: 1.46
+Allocated Value: 6
+Allocated Values List: [6]
+Risk of infertility: High risk
+
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  high
+CYCLE:  high
+FSH/LH:  low
+PROLACTIN:  low
+Cumulative risk score: 1.46
+Allocated Value: 6
+Allocated Values List: [6]
+Risk of infertility: High risk
+
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  medium
+CYCLE:  high
+FSH/LH:  low
+PROLACTIN:  medium
+Cumulative risk score: 1.1400000000000001
+Allocated Value: 4
+Allocated Values List: [4]
+Risk of infertility: Medium risk
+
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  high
+CYCLE:  low
+FSH/LH:  low
+PROLACTIN:  low
+Cumulative risk score: 0.9200000000000002
+Allocated Value: 4
+Allocated Values List: [4]
+Risk of infertility: Medium risk
+
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  low
+CYCLE:  high
+FSH/LH:  low
+PROLACTIN:  medium
+Cumulative risk score: 0.82
+Allocated Value: 4
+Allocated Values List: [4]
+Risk of infertility: Medium risk
+
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  high
+CYCLE:  low
+FSH/LH:  low
+PROLACTIN:  low
+Cumulative risk score: 0.9200000000000002
+Allocated Value: 4
+Allocated Values List: [4]
+Risk of infertility: Medium risk
+
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  low
+CYCLE:  low
+FSH/LH:  low
+PROLACTIN:  low
+Cumulative risk score: 0.2
+Allocated Value: 2
+Allocated Values List: [2]
+Risk of infertility: Low risk
+
+isiri@Isiris-MacBook-Pro PCOS-FertiliCare % /usr/local/bin/python3 "/Users/isiri/Documents/SDGP CODE /PCOS-FertiliCare/Algo2.py"
+BMI:  low
+CYCLE:  high
+FSH/LH:  medium
+PROLACTIN:  low
+Cumulative risk score: 0.8999999999999999
+Allocated Value: 4
+Allocated Values List: [4]
+Risk of infertility: Medium risk

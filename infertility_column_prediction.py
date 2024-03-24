@@ -6,8 +6,6 @@ Prolactin_low = 0
 Prolactin_high = 25
 Normal_FSH_LH_Ratio = 1
 
-# testing
-
 def populate_infertility(df):
     Normal_infertility_risk = 0
     Medium_infertility_risk = 1
