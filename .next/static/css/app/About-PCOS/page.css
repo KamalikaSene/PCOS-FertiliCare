@@ -1,0 +1,71 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./src/app/About-PCOS/Aboutpcos.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+.Aboutpcos_container__rcjRk {
+  display: flex;
+  gap: 100px;
+  background-color:pink;
+  
+}
+
+.Aboutpcos_textContainer__mXyNh {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.Aboutpcos_subtitle__iQhtn{
+  color:var(--btn)
+}
+
+.Aboutpcos_title__w_npu{
+  font-size: 54px;
+  margin-left:20px;
+}
+
+.Aboutpcos_desc__AOgY0{
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.Aboutpcos_boxes__PgL6o{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Aboutpcos_box__DdInO{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Aboutpcos_box__DdInO h1{
+  color: var(--btn);
+}
+
+.Aboutpcos_imgContainer__lw5IB {
+  margin-right:40px;
+  flex: 1;
+  position: relative;
+  width:100%;
+}
+
+.Aboutpcos_img__y8ksK{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .Aboutpcos_container__rcjRk {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Aboutpcos_boxes__PgL6o{
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+

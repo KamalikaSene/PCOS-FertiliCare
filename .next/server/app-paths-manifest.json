@@ -1,0 +1,7 @@
+{
+  "/page": "app/page.js",
+  "/About-PCOS/page": "app/About-PCOS/page.js",
+  "/SLMC-doctor-auth/page": "app/SLMC-doctor-auth/page.js",
+  "/Result-page/page": "app/Result-page/page.js",
+  "/about-app/page": "app/about-app/page.js"
+}
